@@ -1,0 +1,19 @@
+@import '~react-md/src/scss/react-md';
+
+@import 'vars';
+@import 'mixins';
+
+
+
+.undefined {
+  border: 2px solid red !important;
+  background-color: yellow  !important;
+}
+
+fieldset {
+  border: none;
+}
+
+//.md-tooltip {
+//  z-index: 20000 !important;
+//}

@@ -1,0 +1,8 @@
+$md-toolbar-mobile-landscape-height: $md-toolbar-mobile-portrait-height;
+//$md-toolbar-mobile-portrait-height: $md-toolbar-tablet-height;
+$footer-height: 80px;
+
+$md-mobile-media-exact: '#{$md-mobile-media} and (max-width: $md-tablet-min-width)';
+$md-tablet-media-exact: '#{$md-tablet-media} and (max-width: $md-desktop-min-width)';
+$md-drawer-tablet-width: 300px;
+$md-drawer-desktop-width: 300px;

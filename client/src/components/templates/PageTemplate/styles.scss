@@ -1,0 +1,14 @@
+@import "~styles/index";
+
+
+.main-container {
+  //max-width: $container-width;
+  padding: 15px 15px;
+  min-height: calc(100vh - #{$md-toolbar-tablet-height + $footer-height});
+}
+
+@media #{$md-mobile-media-exact} {
+  .main-container {
+    padding: 0;
+  }
+}

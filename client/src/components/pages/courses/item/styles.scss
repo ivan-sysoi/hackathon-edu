@@ -1,0 +1,22 @@
+.course-item__replies {
+  margin-top: 20px;
+}
+
+.course-item-reply__btns {
+  display: flex;
+  width: 100%;
+  margin-top: 20px;
+  justify-content: space-around;
+
+  > * {
+  }
+}
+
+.course-item__answer-form {
+  margin-top: 20px;
+
+}
+
+.course-item-reply__code {
+  margin-bottom: 20px !important;
+}

@@ -1,0 +1,33 @@
+{
+  "presets": [
+    ["env", {
+      "modules": false
+    }],
+    "react",
+    "stage-1"
+  ],
+  "plugins": [
+    "react-hot-loader/babel",
+    "transform-decorators-legacy",
+//    "transform-runtime",
+//    "syntax-dynamic-import"
+  ],
+  "env": {
+    "development": {
+      "plugins": [
+        "transform-es2015-modules-commonjs"
+      ]
+    },
+    "test": {
+      "plugins": [
+        "transform-es2015-modules-commonjs"
+      ]
+    },
+    "production": {
+      "plugins": [
+        "transform-es2015-modules-commonjs",
+        "transform-react-remove-prop-types"
+      ]
+    }
+  }
+}

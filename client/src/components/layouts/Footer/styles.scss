@@ -1,0 +1,24 @@
+@import "~styles/index";
+
+
+
+.footer {
+  height: $footer-height;
+  //width: 100%;
+  //padding: 20px;
+  text-align: center;
+  //background-color: theme-color(bg);
+
+}
+
+.footer__customer-link {
+  font-weight: $md-font-bold;
+  color: theme-color(black);
+  font-size: $md-font-medium;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.footer__copy {
+  font-size: 14px
+}

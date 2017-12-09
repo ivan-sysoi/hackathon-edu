@@ -1,0 +1,23 @@
+@import "~styles/index";
+
+$toolbar-actions-width: 310px;
+$toolbar-sep-width: 20px;
+$toolbar-logo-width: 64px;
+
+$toolbar-rl-sep: 20px;
+
+.md-title--toolbar {
+  flex: 1;
+}
+
+.toolbar__right-btns {
+  display: flex;
+  justify-content: flex-end;
+  > * {
+    margin-right: 5px;
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
+  margin-right: 26px;
+}

@@ -1,0 +1,9 @@
+@import "~styles/index";
+
+
+@each $type in info, error, success {
+  .toast_#{$type} {
+    //background-color: theme-color('toast-' + $type) !important;
+    //color: theme-color('toast-' + $type + '-text')
+  }
+}
