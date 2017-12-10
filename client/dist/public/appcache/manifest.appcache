@@ -1,5 +1,5 @@
 CACHE MANIFEST
-#ver:2017-12-10 16:29:53
+#ver:2017-12-10 18:17:20
 #plugin:4.8.4
 
 CACHE:
@@ -7,9 +7,9 @@ CACHE:
 /public/570eb83859dc23dd0eec423a49e147fe.woff2
 /public/012cf6a10129e2275d79d6adac7f3b02.woff
 /public/a37b0c01c0baf1888ca812cc0508f6e2.ttf
-/public/client.7bc2aaf1f199fb23e5c5.js
+/public/client.6921197f987ad620795a.js
 /public/vendor.e05df2483037445f3d63.js
-/public/ddf9b5a339a4a47a54fedcfebfd04884.css
+/public/3e3171684b34fceef0f600502857962e.css
 
 NETWORK:
 *

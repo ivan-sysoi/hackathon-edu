@@ -64,7 +64,7 @@ class CoursesListPage extends PureComponent {
   render() {
     return (
       <PageTemplate
-        title="Все курсы"
+        title="All courses"
       >
         <Card>
           <DataTable

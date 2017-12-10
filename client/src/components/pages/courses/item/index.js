@@ -328,7 +328,7 @@ class CoursesItemPage extends PureComponent {
                             primary
                             onClick={this.voteAnswer(ind)}
                           >
-                            Оценить
+                            Vote
                           </Button>
                         </div>
                       )}
