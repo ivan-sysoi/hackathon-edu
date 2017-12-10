@@ -233,7 +233,9 @@ class CoursesItemPage extends PureComponent {
             <p
               className="course-card__body"
             >
-              {this.state.post.body}
+              {this.state.post.body.split('\n').map(l => (
+                <p>{l}</p>
+              ))}
             </p>
             <div>
               {this.state.post.created}

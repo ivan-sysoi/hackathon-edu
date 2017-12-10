@@ -1,8 +1,8 @@
 import { AUTH } from 'store/auth/const'
 
 export const selectTeacherUser = () => ({
-  username: 'profichain1',
-  pass: 'P5HpzW9erLXhNtYtd4kfJD2bEz3RjbVNzDUmyRAjtNBEkMkkUooi',
+  username: 'profichain3',
+  pass: 'P5HvkckrN4WPp5En8LssgVkvsTJsQFLs2onsXXhkx1t1u4c2fg29',
   role: 'teacher',
 })
 
