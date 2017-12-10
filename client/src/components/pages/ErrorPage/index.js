@@ -13,10 +13,10 @@ class ErrorPage extends Component {
   render() {
     return (
       <MinimalTemplate
-        title="Ошибка 500"
+        title="Error 500"
       >
         <h1>500 </h1>
-        <h2>К сожалению, произошла ошибка. <br/> В ближайшее время все будет исправлено. <br/> Попробуйте зайти позже.</h2>
+        <h2>Server Error</h2>
       </MinimalTemplate>
     )
   }

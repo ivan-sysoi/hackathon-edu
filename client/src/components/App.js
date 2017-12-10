@@ -6,8 +6,6 @@ import {
   CoursesAddPage,
   CoursesListPage,
   CoursesItemPage,
-  NotFound,
-  IndexPage,
 } from 'components'
 
 import { isBrowser } from 'config'
@@ -30,9 +28,8 @@ const App = () => {
       <body className="app"/>
     </Helmet>,
     <Switch key="Switch">
-      <Route path="/" exact component={IndexPage} strict/>
+      <Route path="/" exact component={CoursesListPage} strict/>
       <Route path="/courses/add" exact component={CoursesAddPage} strict/>
-      <Route path="/courses" exact component={CoursesListPage} strict/>
       <Route path="/course/" component={CoursesItemPage} />
 
       {/*<Route component={NotFound}/>*/}

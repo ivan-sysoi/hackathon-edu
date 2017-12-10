@@ -70,11 +70,12 @@ class CoursesListPage extends PureComponent {
           <DataTable
             baseId="coursesTable"
             plain
+            className="courses-table"
           >
             <TableHeader>
               <TableRow>
-                <TableColumn>Название</TableColumn>
-                <TableColumn>Дата</TableColumn>
+                <TableColumn>Title</TableColumn>
+                <TableColumn>Created</TableColumn>
                 <TableColumn></TableColumn>
               </TableRow>
             </TableHeader>
@@ -84,12 +85,13 @@ class CoursesListPage extends PureComponent {
                   key={course.id}
                 >
                   <TableColumn
+                    className="courses-table__title"
                   >
-                    {/*<Link*/}
-                      {/*to={`/course${course.url}`}*/}
-                    {/*>*/}
+                    <Link
+                      to={`/course${course.url}`}
+                    >
                       {course.title}
-                    {/*</Link>*/}
+                    </Link>
                   </TableColumn>
                   <TableColumn
                   >

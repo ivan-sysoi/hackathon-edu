@@ -13,8 +13,8 @@ const schema = {
     'desc',
   ],
   properties: {
-    title: { type: 'string', title: 'Заголовок' },
-    desc: { type: 'string', title: 'Описание' },
+    title: { type: 'string', title: 'Title' },
+    desc: { type: 'string', title: 'Description' },
   },
 }
 

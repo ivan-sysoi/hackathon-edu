@@ -12,7 +12,7 @@ const schema = {
     'answer',
   ],
   properties: {
-    answer: { type: 'string', title: 'Ответ' },
+    answer: { type: 'string', title: 'Answer' },
   },
 }
 

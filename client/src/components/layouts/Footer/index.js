@@ -26,7 +26,7 @@ class Footer extends PureComponent {
         <div
           className="footer__copy"
         >
-          Copyright {(new Date()).getFullYear()}
+          Copyright {(new Date()).getFullYear()} Profichain
         </div>
       </footer>
     )
