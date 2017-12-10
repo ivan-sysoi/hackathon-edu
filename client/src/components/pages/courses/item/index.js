@@ -14,9 +14,10 @@ import { selectCurrentUser } from 'store/selectors'
 import { resetFormData, addSuccessToast } from 'store/actions'
 import { PageTemplate, AnswerForm, OneSelectWidget } from 'components'
 
-
+let JSEncrypt = null
 if (isBrowser) {
   require('./styles.scss')
+  JSEncrypt = require('jsencrypt')
   window.golos = golos
   window.CryptoJS = CryptoJS
 }
@@ -120,7 +121,11 @@ class CoursesItemPage extends PureComponent {
       this.props.user.username,
       data.formData.answer,
     ]
-    const encryptedMessage = CryptoJS.AES.encrypt(msgData.join(':'), this.state.memoKey).toString()
+    var encrypt = new JSEncrypt.JSEncrypt();
+    let str = this.state.memoKey.toString();
+    encrypt.setPublicKey(str);
+    str = msgData.join(':').toString(ASCII);
+    const encryptedMessage = encrypt.encrypt(str);
 
     const postingWif = golos.auth.toWif(this.props.user.username, this.props.user.pass, 'posting');
 
@@ -152,7 +157,10 @@ class CoursesItemPage extends PureComponent {
         const replies = [...prevState.replies]
         replies[ind].encrypted = false
         try {
-          replies[ind].body = CryptoJS.AES.decrypt(replies[ind].body, prevState.memoKey).toString(CryptoJS.enc.Utf8)
+          var decrypt = new JSEncrypt();
+          var privateMemo = golos.Auth.getPrivateKeys(this.props.user.username, this.props.user.path, ['memo']);
+          decrypt.setPrivateKey(privateMemo.val());
+          replies[ind].body = decrypt.decrypt(replies[ind].body);
         } catch (e) {
           replies[ind].body = 'Invalid encrypted message'
         }
