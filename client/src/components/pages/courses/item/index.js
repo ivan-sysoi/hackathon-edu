@@ -11,7 +11,7 @@ import CryptoJS from 'crypto-js'
 import golos from 'services/golos'
 import { isBrowser } from 'config'
 import { selectCurrentUser } from 'store/selectors'
-import { resetFormData } from 'store/actions'
+import { resetFormData, addSuccessToast } from 'store/actions'
 import { PageTemplate, AnswerForm, OneSelectWidget } from 'components'
 
 
@@ -27,6 +27,7 @@ if (isBrowser) {
   }),
   dispatch => ({
     resetAnswerForm: () => dispatch(resetFormData(AnswerForm.formName)),
+    addVoteNotification: () => dispatch(addSuccessToast('Ваш голос добавлен')),
   })
 )
 class CoursesItemPage extends PureComponent {
@@ -77,7 +78,15 @@ class CoursesItemPage extends PureComponent {
               if (postContent.replies && postContent.replies.length > 0) {
                 replies = postContent.replies.map(r => {
                   const replyContent = result.content[r]
-                  const reply = Object.assign({}, this.postContentData(replyContent), { encrypted: true, replies: [] })
+
+                  const isVotedByTeacher = this.props.user.role === 'teacher' && replyContent.active_votes
+                    .findIndex(v => v.voter === this.props.user.username) !== -1
+
+                  const reply = Object.assign(
+                    {},
+                    this.postContentData(replyContent),
+                    { encrypted: true, replies: [], isVotedByTeacher }
+                  )
 
                   if (replyContent.replies && replyContent.replies.length > 0) {
                     reply.replies = replyContent.replies.map(r => {
@@ -158,25 +167,38 @@ class CoursesItemPage extends PureComponent {
   voteAnswer(ind) {
     return () => {
       const reply = this.state.replies[ind]
-      console.log(reply.mark)
-      const postingWif = golos.auth.toWif(this.props.user.username, this.props.user.pass, 'posting');
+      const postingWif = golos.auth.toWif(this.props.user.username, this.props.user.pass, 'posting')
       //golos.broadcast.comment(wif, parentAuthor, parentPermlink, author, permlink, title, body, jsonMetadata, function(err, result) {
-      golos.broadcast.comment(
+      //golos.broadcast.comment(
+      //  postingWif,
+      //  reply.author,
+      //  reply.permlink,
+      //  this.props.user.username,
+      //  `${reply.permlink}-teacher-${new Date().getTime()}`,
+      //  '',
+      //  `Оценка ${reply.mark}`,
+      //  {},
+      //  (err, result) => {
+      //    console.log(err, result);
+      //    if (!err) {
+      //      this.fetchPost()
+      //    }
+      //  })
+
+      golos.broadcast.vote(
         postingWif,
+        this.props.user.username,
         reply.author,
         reply.permlink,
-        this.props.user.username,
-        `${reply.permlink}-teacher-${new Date().getTime()}`,
-        '',
-        `Оценка ${reply.mark}`,
-        {},
-        (err, result) => {
-          console.log(err, result);
+        10000 * reply.mark / 5,
+        (err, results) => {
           if (!err) {
+            this.props.addVoteNotification()
             this.fetchPost()
           }
-        });
-
+          console.log('Vote for reply', err, results)
+        }
+      )
 
     }
   }
@@ -194,8 +216,8 @@ class CoursesItemPage extends PureComponent {
   }
 
   render() {
-    console.log('Item page render: ', this.props)
-    console.log('Item page render: ', this.state)
+    //console.log('Item page render: ', this.props)
+    //console.log('Item page render: ', this.state)
     return (
       <PageTemplate
         title={`Курс: ${this.state.post.title}`}
@@ -272,7 +294,7 @@ class CoursesItemPage extends PureComponent {
                       >
                         Расшифровать
                       </Button>
-                      {!r.replies || r.replies.length === 0 && (
+                      {!r.isVotedByTeacher && (
                         <div
 
                         >

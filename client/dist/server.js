@@ -3155,6 +3155,9 @@ var CoursesItemPage = (_dec = (0, _reactRedux.connect)(function (state) {
   return {
     resetAnswerForm: function resetAnswerForm() {
       return dispatch((0, _actions.resetFormData)(_components.AnswerForm.formName));
+    },
+    addVoteNotification: function addVoteNotification() {
+      return dispatch((0, _actions.addSuccessToast)('Ваш голос добавлен'));
     }
   };
 }), _dec(_class = (_temp = _class2 = function (_PureComponent) {
@@ -3214,7 +3217,12 @@ var CoursesItemPage = (_dec = (0, _reactRedux.connect)(function (state) {
                 if (postContent.replies && postContent.replies.length > 0) {
                   replies = postContent.replies.map(function (r) {
                     var replyContent = result.content[r];
-                    var reply = Object.assign({}, _this2.postContentData(replyContent), { encrypted: true, replies: [] });
+
+                    var isVotedByTeacher = _this2.props.user.role === 'teacher' && replyContent.active_votes.findIndex(function (v) {
+                      return v.voter === _this2.props.user.username;
+                    }) !== -1;
+
+                    var reply = Object.assign({}, _this2.postContentData(replyContent), { encrypted: true, replies: [], isVotedByTeacher: isVotedByTeacher });
 
                     if (replyContent.replies && replyContent.replies.length > 0) {
                       reply.replies = replyContent.replies.map(function (r) {
@@ -3291,14 +3299,30 @@ var CoursesItemPage = (_dec = (0, _reactRedux.connect)(function (state) {
 
       return function () {
         var reply = _this5.state.replies[ind];
-        console.log(reply.mark);
         var postingWif = _golos2.default.auth.toWif(_this5.props.user.username, _this5.props.user.pass, 'posting');
         //golos.broadcast.comment(wif, parentAuthor, parentPermlink, author, permlink, title, body, jsonMetadata, function(err, result) {
-        _golos2.default.broadcast.comment(postingWif, reply.author, reply.permlink, _this5.props.user.username, reply.permlink + '-teacher-' + new Date().getTime(), '', '\u041E\u0446\u0435\u043D\u043A\u0430 ' + reply.mark, {}, function (err, result) {
-          console.log(err, result);
+        //golos.broadcast.comment(
+        //  postingWif,
+        //  reply.author,
+        //  reply.permlink,
+        //  this.props.user.username,
+        //  `${reply.permlink}-teacher-${new Date().getTime()}`,
+        //  '',
+        //  `Оценка ${reply.mark}`,
+        //  {},
+        //  (err, result) => {
+        //    console.log(err, result);
+        //    if (!err) {
+        //      this.fetchPost()
+        //    }
+        //  })
+
+        _golos2.default.broadcast.vote(postingWif, _this5.props.user.username, reply.author, reply.permlink, 10000 * reply.mark / 5, function (err, results) {
           if (!err) {
+            _this5.props.addVoteNotification();
             _this5.fetchPost();
           }
+          console.log('Vote for reply', err, results);
         });
       };
     }
@@ -3322,8 +3346,8 @@ var CoursesItemPage = (_dec = (0, _reactRedux.connect)(function (state) {
     value: function render() {
       var _this7 = this;
 
-      console.log('Item page render: ', this.props);
-      console.log('Item page render: ', this.state);
+      //console.log('Item page render: ', this.props)
+      //console.log('Item page render: ', this.state)
       return _react2.default.createElement(
         _components.PageTemplate,
         {
@@ -3424,7 +3448,7 @@ var CoursesItemPage = (_dec = (0, _reactRedux.connect)(function (state) {
                     },
                     '\u0420\u0430\u0441\u0448\u0438\u0444\u0440\u043E\u0432\u0430\u0442\u044C'
                   ),
-                  !r.replies || r.replies.length === 0 && _react2.default.createElement(
+                  !r.isVotedByTeacher && _react2.default.createElement(
                     'div',
                     null,
                     _react2.default.createElement(_components.OneSelectWidget, {
