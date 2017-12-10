@@ -53,7 +53,6 @@ class Toolbar extends PureComponent {
   }
 
   render() {
-    console.log('Toolbar: ', this.props.currentUser)
     const results = [
       <ReactMdToolbar
         key="toolbar"
@@ -68,14 +67,14 @@ class Toolbar extends PureComponent {
           className="toolbar__right-btns"
         >
           <Link
-            to="/courses"
+            to="/"
           >
             <Button
               flat
               primary
               type="submit"
             >
-              Все курсы
+              All courses
             </Button>
           </Link>
 
@@ -88,7 +87,7 @@ class Toolbar extends PureComponent {
                 primary
                 type="submit"
               >
-                Новый курс
+                Create course
               </Button>
             </Link>
           )}

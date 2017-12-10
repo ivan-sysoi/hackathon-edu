@@ -51,7 +51,7 @@ class CoursesAddPage extends PureComponent {
       (err, result) => {
         console.log('submit post: ', err, result)
         if (!err) {
-          location.href = '/courses'
+          location.href = '/'
         }
       });
   }
@@ -60,11 +60,11 @@ class CoursesAddPage extends PureComponent {
   render() {
     return (
       <PageTemplate
-        title="Добавить курс"
+        title="Create new course"
       >
         <Card>
           <CardTitle
-            title="Добавить курс"
+            title="New course"
           />
           <CardText>
             <AddCourseForm
@@ -75,7 +75,7 @@ class CoursesAddPage extends PureComponent {
                 primary
                 type="submit"
               >
-                Опубликовать
+                Submit
               </Button>
             </AddCourseForm>
           </CardText>

@@ -13,10 +13,10 @@ class NotFound extends Component {
   render() {
     return (
       <MinimalTemplate
-        title="Страница не найдена"
+        title="Not found"
       >
         <h1>404</h1>
-        <h2>Такой страницы здесь нет :)</h2>
+        <h2>Not found</h2>
       </MinimalTemplate>
     )
   }

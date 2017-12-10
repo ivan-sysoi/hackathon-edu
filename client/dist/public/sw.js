@@ -5,9 +5,9 @@ var __wpo = {
       "/public/570eb83859dc23dd0eec423a49e147fe.woff2",
       "/public/012cf6a10129e2275d79d6adac7f3b02.woff",
       "/public/a37b0c01c0baf1888ca812cc0508f6e2.ttf",
-      "/public/client.7bc2aaf1f199fb23e5c5.js",
+      "/public/client.6921197f987ad620795a.js",
       "/public/vendor.e05df2483037445f3d63.js",
-      "/public/ddf9b5a339a4a47a54fedcfebfd04884.css"
+      "/public/3e3171684b34fceef0f600502857962e.css"
     ],
     "additional": [],
     "optional": []
@@ -18,13 +18,13 @@ var __wpo = {
     "09963592e8c953cc7e14e3fb0a5b05d5042e8435": "/public/570eb83859dc23dd0eec423a49e147fe.woff2",
     "c6c953c2ccb2ca9abb21db8dbf473b5a435f0082": "/public/012cf6a10129e2275d79d6adac7f3b02.woff",
     "fc05de31234e0090f7ddc28ce1b23af4026cb1da": "/public/a37b0c01c0baf1888ca812cc0508f6e2.ttf",
-    "dbd53cfd7247df43d6f4e4977ec0136055500b8f": "/public/client.7bc2aaf1f199fb23e5c5.js",
-    "11a9cf9ff6191ab9035e51933737452ba7470b92": "/public/vendor.e05df2483037445f3d63.js",
-    "0ead43127f0d99398bac4adb501e68afc37b5a47": "/public/ddf9b5a339a4a47a54fedcfebfd04884.css"
+    "f331694bb6bd4b099074c92a4ba54633690a40f8": "/public/client.6921197f987ad620795a.js",
+    "996e198d3df8a975bc14839218f80ef01eeca8ea": "/public/vendor.e05df2483037445f3d63.js",
+    "b93f8f0acaeb0ae008b3d5e7b0852df5ff595a0a": "/public/3e3171684b34fceef0f600502857962e.css"
   },
   "strategy": "changed",
   "responseStrategy": "cache-first",
-  "version": "2017-12-10 16:29:53",
+  "version": "2017-12-10 18:17:20",
   "name": "webpack-offline",
   "pluginVersion": "4.8.4",
   "relativePaths": false

@@ -28,7 +28,7 @@ if (isBrowser) {
   }),
   dispatch => ({
     resetAnswerForm: () => dispatch(resetFormData(AnswerForm.formName)),
-    addVoteNotification: () => dispatch(addSuccessToast('Ваш голос добавлен')),
+    addVoteNotification: () => dispatch(addSuccessToast('Your vote has been added!')),
   })
 )
 class CoursesItemPage extends PureComponent {
@@ -228,16 +228,22 @@ class CoursesItemPage extends PureComponent {
     //console.log('Item page render: ', this.state)
     return (
       <PageTemplate
-        title={`Курс: ${this.state.post.title}`}
+        title={`Course: ${this.state.post.title}`}
       >
 
-        <Card>
+        <Card
+          className="course-card"
+        >
           {/*<CardTitle*/}
           {/*title={`Курс: ${this.state.post.title}`}*/}
           {/*/>*/}
           <CardText>
-            <p>
-              {this.state.post.body}
+            <p
+              className="course-card__body"
+            >
+              {this.state.post.body.split('\n').map(l => (
+                <p>{l}</p>
+              ))}
             </p>
             <div>
               {this.state.post.created}
@@ -254,7 +260,7 @@ class CoursesItemPage extends PureComponent {
               className="course-item-reply"
             >
               <CardTitle
-                title="Добавить ответ"
+                title="Reply"
               />
               <CardText>
                 <AnswerForm
@@ -265,7 +271,7 @@ class CoursesItemPage extends PureComponent {
                     primary
                     type="submit"
                   >
-                    Опубликовать
+                    Submit
                   </Button>
                 </AnswerForm>
               </CardText>
@@ -279,7 +285,7 @@ class CoursesItemPage extends PureComponent {
             className="course-item__replies"
           >
 
-            <h3>Ответы</h3>
+            <h3>Answers</h3>
 
             {this.state.replies.map((r, ind) => (
               <Card
@@ -296,18 +302,21 @@ class CoursesItemPage extends PureComponent {
                     <div
                       className="course-item-reply__btns"
                     >
-                      <Button
-                        raised
-                        onClick={this.decrypt(ind)}
-                      >
-                        Расшифровать
-                      </Button>
+                      {r.encrypted && (
+                        <Button
+                          raised
+                          onClick={this.decrypt(ind)}
+                        >
+                          Decode
+                        </Button>
+                      )}
+
                       {!r.isVotedByTeacher && (
                         <div
 
                         >
                           <OneSelectWidget
-                            placeholder="Оценка"
+                            placeholder="Mark"
                             style={{ width: 50 }}
                             value={r.mark}
                             options={{
@@ -327,7 +336,7 @@ class CoursesItemPage extends PureComponent {
                             primary
                             onClick={this.voteAnswer(ind)}
                           >
-                            Оценить
+                            Vote
                           </Button>
                         </div>
                       )}
