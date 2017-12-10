@@ -130,7 +130,6 @@ const resolveModules = () => () => ({
     modules: [path.resolve(__dirname, sourceDir), 'node_modules'],
     alias: {
       styles: path.resolve(__dirname, './src/assets/styles/'),
-      leaflet: path.resolve(__dirname, './node_modules/leaflet/dist/leaflet.js'),
     },
   },
 })

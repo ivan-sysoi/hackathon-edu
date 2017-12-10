@@ -12,9 +12,9 @@ import TableRow from 'react-md/lib/DataTables/TableRow'
 import TableColumn from 'react-md/lib/DataTables/TableColumn'
 import TablePagination from 'react-md/lib/DataTables/TablePagination'
 import { connect } from 'react-redux'
-import golos from 'golos-js'
 import { Link } from 'react-router-dom'
 
+import golos from 'services/golos'
 import { isBrowser } from 'config'
 import { selectCourses, selectUser } from 'store/selectors'
 import { PageTemplate } from 'components'
@@ -33,8 +33,7 @@ if (isBrowser) {
 class CoursesListPage extends PureComponent {
   static propTypes = {}
 
-  static defaultProps = {
-  }
+  static defaultProps = {}
 
   constructor(props) {
     super(props)
@@ -52,11 +51,11 @@ class CoursesListPage extends PureComponent {
           const posts = Object.values(result.content)
             .sort((a, b) => new Date(b.created) - new Date(a.created))
             .map(item => ({
-            id: item.id,
-            created: item.created,
-            title: item.title,
-            url: item.url,
-          }))
+              id: item.id,
+              created: item.created,
+              title: item.title,
+              url: item.url,
+            }))
           return {
             ...prevState,
             posts,
@@ -72,17 +71,16 @@ class CoursesListPage extends PureComponent {
       <PageTemplate
         title="Все курсы"
       >
-
         <Card>
           <DataTable
             baseId="coursesTable"
             plain
           >
             <TableHeader>
-            <TableRow>
-            <TableColumn>Название</TableColumn>
-            <TableColumn>Дата</TableColumn>
-            </TableRow>
+              <TableRow>
+                <TableColumn>Название</TableColumn>
+                <TableColumn>Дата</TableColumn>
+              </TableRow>
             </TableHeader>
             <TableBody>
               {this.state.posts.map((course, i) => (
