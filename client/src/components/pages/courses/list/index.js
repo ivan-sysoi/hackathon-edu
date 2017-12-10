@@ -1,22 +1,18 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
-import Button from 'react-md/lib/Buttons/Button'
 import Card from 'react-md/lib/Cards/Card'
-import CardTitle from 'react-md/lib/Cards/CardTitle'
-import CardText from 'react-md/lib/Cards/CardText'
-import CardActions from 'react-md/lib/Cards/CardActions'
 import DataTable from 'react-md/lib/DataTables/DataTable'
 import TableHeader from 'react-md/lib/DataTables/TableHeader'
 import TableBody from 'react-md/lib/DataTables/TableBody'
 import TableRow from 'react-md/lib/DataTables/TableRow'
 import TableColumn from 'react-md/lib/DataTables/TableColumn'
-import TablePagination from 'react-md/lib/DataTables/TablePagination'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
+import Button from 'react-md/lib/Buttons/Button'
 
 import golos from 'services/golos'
 import { isBrowser } from 'config'
-import { selectCourses, selectUser } from 'store/selectors'
+import { selectTeacherUser } from 'store/selectors'
 import { PageTemplate } from 'components'
 
 
@@ -27,7 +23,7 @@ if (isBrowser) {
 
 @connect(
   state => ({
-    user: selectUser(state),
+    teacher: selectTeacherUser(state),
   })
 )
 class CoursesListPage extends PureComponent {
@@ -44,7 +40,7 @@ class CoursesListPage extends PureComponent {
   }
 
   componentWillMount() {
-    golos.api.getState('@' + this.props.user.username, (err, result) => {
+    golos.api.getState('@' + this.props.teacher.username, (err, result) => {
       //console.log('getState', err, result)
       if (result && result.content) {
         this.setState((prevState) => {
@@ -63,7 +59,6 @@ class CoursesListPage extends PureComponent {
         })
       }
     })
-    //go
   }
 
   render() {
@@ -80,6 +75,7 @@ class CoursesListPage extends PureComponent {
               <TableRow>
                 <TableColumn>Название</TableColumn>
                 <TableColumn>Дата</TableColumn>
+                <TableColumn></TableColumn>
               </TableRow>
             </TableHeader>
             <TableBody>
@@ -89,15 +85,29 @@ class CoursesListPage extends PureComponent {
                 >
                   <TableColumn
                   >
-                    <Link
-                      to={`/course${course.url}`}
-                    >
+                    {/*<Link*/}
+                      {/*to={`/course${course.url}`}*/}
+                    {/*>*/}
                       {course.title}
-                    </Link>
+                    {/*</Link>*/}
                   </TableColumn>
                   <TableColumn
                   >
                     {course.created}
+                  </TableColumn>
+                  <TableColumn
+                  >
+                    <Link
+                      to={`/course${course.url}`}
+                    >
+                      <Button
+                        icon
+                        primary
+                      >
+                        chevron_right
+                      </Button>
+                    </Link>
+
                   </TableColumn>
                 </TableRow>
               ))}

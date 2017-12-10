@@ -11,16 +11,18 @@ import slug from 'slug'
 import golos from 'services/golos'
 import { isBrowser } from 'config'
 import { PageTemplate, AddCourseForm } from 'components'
-import { selectUser } from 'store/selectors'
+import { selectCurrentUser } from 'store/selectors'
+import { teacherRoleRequired } from 'utils/decorators'
 
 
 if (isBrowser) {
   require('./styles.scss')
 }
 
+@teacherRoleRequired()
 @connect(
   state => ({
-    user: selectUser(state),
+    user: selectCurrentUser(state),
   })
 )
 class CoursesAddPage extends PureComponent {
@@ -36,10 +38,7 @@ class CoursesAddPage extends PureComponent {
   onSubmit(data) {
     console.log(data)
     const postingWif = golos.auth.toWif(this.props.user.username, this.props.user.pass, 'posting');
-
     //golos.broadcast.comment(wif, parentAuthor, parentPermlink, author, permlink, title, body, jsonMetadata, function(err, result) {
-
-
     golos.broadcast.comment(
       postingWif,
       '',
@@ -50,7 +49,7 @@ class CoursesAddPage extends PureComponent {
       data.formData.desc,
       {},
       (err, result) => {
-      console.log(err, result)
+        console.log('submit post: ', err, result)
         if (!err) {
           location.href = '/courses'
         }
@@ -63,7 +62,6 @@ class CoursesAddPage extends PureComponent {
       <PageTemplate
         title="Добавить курс"
       >
-
         <Card>
           <CardTitle
             title="Добавить курс"

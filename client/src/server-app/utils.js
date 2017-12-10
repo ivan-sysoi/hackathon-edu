@@ -1,6 +1,8 @@
 import { Promise } from 'es6-promise'
 
 import { UI, UI_MEDIA, UI_INITIAL_STATE } from 'store/ui/const'
+import { AUTH } from 'store/auth/const'
+import { selectTeacherUser } from 'store/auth/selectors'
 
 
 export function getInitialUIData(req) {
@@ -24,10 +26,12 @@ export function getInitialUIData(req) {
 }
 
 export function getInitialStoreData(req, res) {
-
-  return new  Promise((resolve) => {
+  return new Promise((resolve) => {
     resolve({
       [UI]: getInitialUIData(req),
+      [AUTH]: {
+        currentUser: selectTeacherUser(),
+      },
     })
   })
 }

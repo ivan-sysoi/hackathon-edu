@@ -19,7 +19,7 @@ const schema = {
 const uiSchema = {
   answer: {
     'ui:options': {
-      rows: 10,
+      rows: 5,
     }
   }
 }

@@ -50,38 +50,6 @@ class PageTemplate extends Component {
       toolbar = (
         <Toolbar
           title={this.props.title}
-          items={[
-            (
-              <div
-                className="toolbar__right-btns"
-              >
-                <Link
-                  to="/courses"
-                >
-                  <Button
-                    flat
-                    primary
-                    type="submit"
-                  >
-                    Все курсы
-                  </Button>
-                </Link>
-
-                <Link
-                  to="/courses/add"
-                >
-                  <Button
-                    flat
-                    primary
-                    type="submit"
-                  >
-                    Новый курс
-                  </Button>
-                </Link>
-
-              </div>
-            ),
-          ]}
         />
       )
     }

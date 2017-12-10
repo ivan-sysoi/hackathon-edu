@@ -10,7 +10,8 @@ import CryptoJS from 'crypto-js'
 
 import golos from 'services/golos'
 import { isBrowser } from 'config'
-import { selectUser, selectStudent } from 'store/selectors'
+import { selectCurrentUser } from 'store/selectors'
+import { resetFormData } from 'store/actions'
 import { PageTemplate, AnswerForm, OneSelectWidget } from 'components'
 
 
@@ -22,16 +23,16 @@ if (isBrowser) {
 
 @connect(
   state => ({
-    user: selectUser(state),
-    student: selectStudent(state),
+    user: selectCurrentUser(state),
+  }),
+  dispatch => ({
+    resetAnswerForm: () => dispatch(resetFormData(AnswerForm.formName)),
   })
 )
 class CoursesItemPage extends PureComponent {
   static propTypes = {}
 
-  static defaultProps = {
-    //courses: [],
-  }
+  static defaultProps = {}
 
   constructor(props) {
     super(props)
@@ -50,82 +51,72 @@ class CoursesItemPage extends PureComponent {
     this.onMarkChange = this.onMarkChange.bind(this)
   }
 
+  postContentData(content) {
+    return {
+      id: content.id,
+      title: content.title,
+      body: content.body,
+      created: content.created,
+      permlink: content.permlink,
+      author: content.author,
+    }
+  }
+
   fetchPost() {
-    const url = this.props.location.pathname.slice(7)
-    golos.api.getState(url, (err, result) => {
-      golos.api.getAccounts([this.props.user.username], (getAccountsErr, getAccountsResults) => {
-        const memoKey = getAccountsResults[0].memo_key
+    if (isBrowser) {
+      const url = this.props.location.pathname.slice(7)
+      golos.api.getState(url, (err, result) => {
+        const postContent = Object.values(result.content).filter(c => c.url === url)[0]
 
-        console.log('getState', err, result)
-        if (result && result.content) {
-          this.setState((prevState) => {
-            const content = Object.values(result.content).filter(c => c.url === url)[0] || Object.values(result.content)[0]
-            let replies = []
-            const post = {
-              title: content.title,
-              created: content.created,
-              body: content.body,
-              permlink: content.permlink,
-            }
-            if (content.replies && content.replies.length > 0) {
-              replies = content.replies.map(r => {
-                const content = result.content[r]
+        golos.api.getAccounts([postContent.author], (getAccountsErr, getAccountsResults) => {
+          console.log('getState', err, result)
+          if (result && result.content) {
+            this.setState((prevState) => {
+              let replies = []
 
-                const reply = {
-                  id: content.id,
-                  title: content.title,
-                  created: content.created,
-                  body: content.body,
-                  encrypted: true,
-                  permlink: content.permlink,
-                }
+              if (postContent.replies && postContent.replies.length > 0) {
+                replies = postContent.replies.map(r => {
+                  const replyContent = result.content[r]
+                  const reply = Object.assign({}, this.postContentData(replyContent), { encrypted: true, replies: [] })
 
-                if (content.replies && content.replies.length > 0) {
-                  reply.replies = content.replies.map(r => {
-                    const content = result.content[r]
-
-                    return {
-                      id: content.id,
-                      title: content.title,
-                      created: content.created,
-                      body: content.body,
-                      encrypted: true,
-                      permlink: content.permlink,
-                    }
-                  })
-                }
-
-                return reply
-              })
-            }
-            return {
-              ...prevState,
-              post,
-              replies,
-              memoKey,
-            }
-          })
-        }
+                  if (replyContent.replies && replyContent.replies.length > 0) {
+                    reply.replies = replyContent.replies.map(r => {
+                      const answerContent = result.content[r]
+                      return this.postContentData(answerContent)
+                    })
+                  }
+                  return reply
+                })
+              }
+              return {
+                ...prevState,
+                post: this.postContentData(postContent),
+                replies,
+                memoKey: getAccountsResults[0].memo_key,
+              }
+            })
+          }
+        })
       })
-    })
+    }
   }
 
   componentWillMount() {
     this.fetchPost()
+    this.props.resetAnswerForm()
   }
 
   onAnswerSubmit(data) {
     const msgData = [
-      this.props.student.username,
+      this.props.user.username,
       data.formData.answer,
     ]
     const encryptedMessage = CryptoJS.AES.encrypt(msgData.join(':'), this.state.memoKey).toString()
 
-    console.log('encryptedMessage: ', encryptedMessage)
-    const postingWif = golos.auth.toWif(this.props.student.username, this.props.student.pass, 'posting');
+    const postingWif = golos.auth.toWif(this.props.user.username, this.props.user.pass, 'posting');
 
-    const parentAuthor = this.props.user.username
-    const author = this.props.student.username
+    const parentAuthor = this.state.post.author
+    const author = this.props.user.username
     const parentPermlink = this.state.post.permlink
 //golos.broadcast.comment(wif, parentAuthor, parentPermlink, author, permlink, title, body, jsonMetadata, function(err, result) {
     golos.broadcast.comment(
@@ -156,7 +147,7 @@ class CoursesItemPage extends PureComponent {
         } catch (e) {
           replies[ind].body = 'Invalid encrypted message'
         }
-        console.log(replies)
+        //console.log(replies)
         return Object.assign({}, prevState, {
           replies,
         })
@@ -169,12 +160,10 @@ class CoursesItemPage extends PureComponent {
       const reply = this.state.replies[ind]
       console.log(reply.mark)
       const postingWif = golos.auth.toWif(this.props.user.username, this.props.user.pass, 'posting');
-
       //golos.broadcast.comment(wif, parentAuthor, parentPermlink, author, permlink, title, body, jsonMetadata, function(err, result) {
-
       golos.broadcast.comment(
         postingWif,
-        this.props.student.username,
+        reply.author,
         reply.permlink,
         this.props.user.username,
         `${reply.permlink}-teacher-${new Date().getTime()}`,
@@ -205,7 +194,8 @@ class CoursesItemPage extends PureComponent {
   }
 
   render() {
-    console.log('render: ', this.state)
+    console.log('Item page render: ', this.props)
+    console.log('Item page render: ', this.state)
     return (
       <PageTemplate
         title={`Курс: ${this.state.post.title}`}
@@ -226,31 +216,34 @@ class CoursesItemPage extends PureComponent {
           </CardText>
         </Card>
 
-        <div
-          className="course-item__answer-form"
-        >
-
-          <Card
-            className="course-item-reply"
+        {this.props.user.role === 'student' && (
+          <div
+            className="course-item__answer-form"
           >
-            <CardTitle
-              title="Добавить ответ"
-            />
-            <CardText>
-              <AnswerForm
-                onSubmit={this.onAnswerSubmit}
-              >
-                <Button
-                  raised
-                  primary
-                  type="submit"
+            <Card
+              className="course-item-reply"
+            >
+              <CardTitle
+                title="Добавить ответ"
+              />
+              <CardText>
+                <AnswerForm
+                  onSubmit={this.onAnswerSubmit}
                 >
-                  Опубликовать
-                </Button>
-              </AnswerForm>
-            </CardText>
-          </Card>
-        </div>
+                  <Button
+                    raised
+                    primary
+                    type="submit"
+                  >
+                    Опубликовать
+                  </Button>
+                </AnswerForm>
+              </CardText>
+            </Card>
+          </div>
+        )}
+
+
         {this.state.replies.length > 0 && (
           <div
             className="course-item__replies"
@@ -263,63 +256,61 @@ class CoursesItemPage extends PureComponent {
                 key={r.id}
                 className="course-item-reply"
               >
-                <CardTitle
-                  title={r.title}
-                />
                 <CardText>
                   <p>
                     {r.body}
                   </p>
-
-
                   <p>{r.created}</p>
 
-                  <div
-                    className="course-item-reply__btns"
-                  >
-                    <Button
-                      raised
-                      onClick={this.decrypt(ind)}
-                    >
-                      Расшифровать
-                    </Button>
-
+                  {this.props.user.role === 'teacher' && (
                     <div
-
+                      className="course-item-reply__btns"
                     >
-                      <OneSelectWidget
-                        placeholder="Оценка"
-                        style={{ width: 50 }}
-                        value={r.mark}
-                        options={{
-                          _fullWidth: false,
-                          enumOptions: [
-                            { value: 1, label: '1' },
-                            { value: 2, label: '2' },
-                            { value: 3, label: '3' },
-                            { value: 4, label: '4' },
-                            { value: 5, label: '5' },
-                          ]
-                        }}
-                        onChange={this.onMarkChange(ind)}
-                      />
                       <Button
                         raised
-                        primary
-                        onClick={this.voteAnswer(ind)}
+                        onClick={this.decrypt(ind)}
                       >
-                        Оценить
+                        Расшифровать
                       </Button>
-                    </div>
+                      {!r.replies || r.replies.length === 0 && (
+                        <div
 
-                  </div>
+                        >
+                          <OneSelectWidget
+                            placeholder="Оценка"
+                            style={{ width: 50 }}
+                            value={r.mark}
+                            options={{
+                              _fullWidth: false,
+                              enumOptions: [
+                                { value: 1, label: '1' },
+                                { value: 2, label: '2' },
+                                { value: 3, label: '3' },
+                                { value: 4, label: '4' },
+                                { value: 5, label: '5' },
+                              ]
+                            }}
+                            onChange={this.onMarkChange(ind)}
+                          />
+                          <Button
+                            raised
+                            primary
+                            onClick={this.voteAnswer(ind)}
+                          >
+                            Оценить
+                          </Button>
+                        </div>
+                      )}
+                    </div>
+                  )}
+
 
                   <ul>
-                  {r.replies && r.replies.map(r => (
-                    <li>
-                      {r.body}
-                    </li>
-                  ))}
+                    {r.replies && r.replies.map(r => (
+                      <li>
+                        {r.body}
+                      </li>
+                    ))}
                   </ul>
                 </CardText>
               </Card>

@@ -62,7 +62,7 @@ module.exports =
 /******/ 	__webpack_require__.p = "/public/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 26);
+/******/ 	return __webpack_require__(__webpack_require__.s = 28);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -122,7 +122,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _fields = __webpack_require__(60);
+var _fields = __webpack_require__(61);
 
 Object.keys(_fields).forEach(function (key) {
   if (key === "default" || key === "__esModule") return;
@@ -146,7 +146,7 @@ Object.keys(_forms).forEach(function (key) {
   });
 });
 
-var _pages = __webpack_require__(78);
+var _pages = __webpack_require__(77);
 
 Object.keys(_pages).forEach(function (key) {
   if (key === "default" || key === "__esModule") return;
@@ -158,7 +158,7 @@ Object.keys(_pages).forEach(function (key) {
   });
 });
 
-var _templates = __webpack_require__(97);
+var _templates = __webpack_require__(98);
 
 Object.keys(_templates).forEach(function (key) {
   if (key === "default" || key === "__esModule") return;
@@ -170,7 +170,7 @@ Object.keys(_templates).forEach(function (key) {
   });
 });
 
-var _layouts = __webpack_require__(101);
+var _layouts = __webpack_require__(102);
 
 Object.keys(_layouts).forEach(function (key) {
   if (key === "default" || key === "__esModule") return;
@@ -192,16 +192,10 @@ module.exports = require("react-redux");
 /* 5 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-md/lib/Buttons/Button");
-
-/***/ }),
-/* 6 */
-/***/ (function(module, exports) {
-
 module.exports = require("react-router-dom");
 
 /***/ }),
-/* 7 */
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -235,7 +229,7 @@ Object.keys(_selectors2).forEach(function (key) {
   });
 });
 
-var _selectors3 = __webpack_require__(75);
+var _selectors3 = __webpack_require__(13);
 
 Object.keys(_selectors3).forEach(function (key) {
   if (key === "default" || key === "__esModule") return;
@@ -246,6 +240,12 @@ Object.keys(_selectors3).forEach(function (key) {
     }
   });
 });
+
+/***/ }),
+/* 7 */
+/***/ (function(module, exports) {
+
+module.exports = require("react-md/lib/Buttons/Button");
 
 /***/ }),
 /* 8 */
@@ -261,7 +261,7 @@ exports.UI_INITIAL_STATE = exports.UI_PAGES = exports.UI_MEDIA = exports.SUCCESS
 
 var _UI_INITIAL_STATE;
 
-var _Drawers = __webpack_require__(45);
+var _Drawers = __webpack_require__(47);
 
 var _Drawers2 = _interopRequireDefault(_Drawers);
 
@@ -302,51 +302,6 @@ var UI_INITIAL_STATE = exports.UI_INITIAL_STATE = (_UI_INITIAL_STATE = {
 
 /***/ }),
 /* 9 */
-/***/ (function(module, exports) {
-
-module.exports = require("react-helmet");
-
-/***/ }),
-/* 10 */
-/***/ (function(module, exports) {
-
-module.exports = require("react-md/lib/Cards/Card");
-
-/***/ }),
-/* 11 */
-/***/ (function(module, exports) {
-
-module.exports = require("react-md/lib/Cards/CardTitle");
-
-/***/ }),
-/* 12 */
-/***/ (function(module, exports) {
-
-module.exports = require("react-md/lib/Cards/CardText");
-
-/***/ }),
-/* 13 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-var SET_FORM_DATA = exports.SET_FORM_DATA = 'SET_FORM_DATA';
-var RESET_FORM_DATA = exports.RESET_FORM_DATA = 'RESET_FORM_DATA';
-
-var setFormData = exports.setFormData = function setFormData(formName, data) {
-  return { type: SET_FORM_DATA, payload: { data: data, formName: formName } };
-};
-var resetFormData = exports.resetFormData = function resetFormData(formName) {
-  var initial = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : true;
-  return { type: RESET_FORM_DATA, payload: { formName: formName, initial: initial } };
-};
-
-/***/ }),
-/* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -368,7 +323,7 @@ Object.keys(_actions).forEach(function (key) {
   });
 });
 
-var _actions2 = __webpack_require__(13);
+var _actions2 = __webpack_require__(11);
 
 Object.keys(_actions2).forEach(function (key) {
   if (key === "default" || key === "__esModule") return;
@@ -380,17 +335,138 @@ Object.keys(_actions2).forEach(function (key) {
   });
 });
 
+var _actions3 = __webpack_require__(22);
+
+Object.keys(_actions3).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  Object.defineProperty(exports, key, {
+    enumerable: true,
+    get: function get() {
+      return _actions3[key];
+    }
+  });
+});
+
+/***/ }),
+/* 10 */
+/***/ (function(module, exports) {
+
+module.exports = require("react-helmet");
+
+/***/ }),
+/* 11 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var SET_FORM_DATA = exports.SET_FORM_DATA = 'SET_FORM_DATA';
+var RESET_FORM_DATA = exports.RESET_FORM_DATA = 'RESET_FORM_DATA';
+
+var setFormData = exports.setFormData = function setFormData(formName, data) {
+  return { type: SET_FORM_DATA, payload: { data: data, formName: formName } };
+};
+var resetFormData = exports.resetFormData = function resetFormData(formName) {
+  var initial = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : true;
+  return { type: RESET_FORM_DATA, payload: { formName: formName, initial: initial } };
+};
+
+/***/ }),
+/* 12 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var AUTH = exports.AUTH = 'auth';
+
+/***/ }),
+/* 13 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.selectCurrentUserRole = exports.selectCurrentUser = exports.selectUserByUserName = exports.selectUsers = exports.selectStudent = exports.selectTeacherUser = undefined;
+
+var _const = __webpack_require__(12);
+
+var selectTeacherUser = exports.selectTeacherUser = function selectTeacherUser() {
+  return {
+    username: 'profichain1',
+    pass: 'P5HpzW9erLXhNtYtd4kfJD2bEz3RjbVNzDUmyRAjtNBEkMkkUooi',
+    role: 'teacher'
+  };
+};
+
+var selectStudent = exports.selectStudent = function selectStudent() {
+  return {
+    username: 'profichain2',
+    pass: 'P5K22HBBg2y2UcJyvb6CSHwHXsPW22QyaoFweAp5K78as3DjW2eZ',
+    role: 'student'
+  };
+};
+
+var selectUsers = exports.selectUsers = function selectUsers() {
+  return [selectTeacherUser(), selectStudent()];
+};
+
+var selectUserByUserName = exports.selectUserByUserName = function selectUserByUserName(state, username) {
+  return selectUsers().find(function (u) {
+    return u.username === username;
+  });
+};
+
+var selectCurrentUser = exports.selectCurrentUser = function selectCurrentUser(state) {
+  return state[_const.AUTH].currentUser;
+};
+
+var selectCurrentUserRole = exports.selectCurrentUserRole = function selectCurrentUserRole(state) {
+  return (state[_const.AUTH].currentUser || {}).role;
+};
+
+/***/ }),
+/* 14 */
+/***/ (function(module, exports) {
+
+module.exports = require("react-router");
+
 /***/ }),
 /* 15 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-md/lib/Cards/CardActions");
+module.exports = require("react-md/lib/Cards/Card");
 
 /***/ }),
 /* 16 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-module.exports = require("golos-js");
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _golosJs = __webpack_require__(82);
+
+var _golosJs2 = _interopRequireDefault(_golosJs);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+_golosJs2.default.config.set('chain_id', '5876894a41e6361bde2e73278f07340f2eb8b41c2facd29099de9deef6cdb679');
+_golosJs2.default.config.set('websocket', 'wss://ws.testnet.golos.io');
+
+exports.default = _golosJs2.default;
 
 /***/ }),
 /* 17 */
@@ -465,12 +541,6 @@ var hideDialog = exports.hideDialog = function hideDialog(name) {
 
 /***/ }),
 /* 20 */
-/***/ (function(module, exports) {
-
-module.exports = require("react-router-server");
-
-/***/ }),
-/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -487,7 +557,7 @@ var getFormState = exports.getFormState = function getFormState(id, data) {
 };
 
 /***/ }),
-/* 22 */
+/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -497,6 +567,22 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 var FORMS = exports.FORMS = 'forms';
+
+/***/ }),
+/* 22 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var SET_CURRENT_USER = exports.SET_CURRENT_USER = 'SET_CURRENT_USER';
+
+var setCurrentUser = exports.setCurrentUser = function setCurrentUser(user) {
+  return { type: SET_CURRENT_USER, payload: user };
+};
 
 /***/ }),
 /* 23 */
@@ -516,15 +602,15 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.selectFormState = exports.INITIAL_FORM_DATA = undefined;
 
-var _isPlainObject = __webpack_require__(52);
+var _isPlainObject = __webpack_require__(53);
 
 var _isPlainObject2 = _interopRequireDefault(_isPlainObject);
 
-var _const = __webpack_require__(22);
+var _const = __webpack_require__(21);
 
 var c = _interopRequireWildcard(_const);
 
-var _utils = __webpack_require__(21);
+var _utils = __webpack_require__(20);
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
@@ -548,6 +634,18 @@ var selectFormState = exports.selectFormState = function selectFormState(state, 
 
 /***/ }),
 /* 25 */
+/***/ (function(module, exports) {
+
+module.exports = require("react-md/lib/Cards/CardTitle");
+
+/***/ }),
+/* 26 */
+/***/ (function(module, exports) {
+
+module.exports = require("react-md/lib/Cards/CardText");
+
+/***/ }),
+/* 27 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -623,22 +721,22 @@ var ErrorPage = function (_Component) {
 exports.default = ErrorPage;
 
 /***/ }),
-/* 26 */
+/* 28 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(27);
+module.exports = __webpack_require__(29);
 
 
 /***/ }),
-/* 27 */
+/* 29 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-__webpack_require__(28);
+__webpack_require__(30);
 
-var _serverApp = __webpack_require__(29);
+var _serverApp = __webpack_require__(31);
 
 var _serverApp2 = _interopRequireDefault(_serverApp);
 
@@ -658,13 +756,13 @@ _serverApp2.default.listen(_config.port, function (error) {
 }); /* eslint-disable no-console */
 
 /***/ }),
-/* 28 */
+/* 30 */
 /***/ (function(module, exports) {
 
 module.exports = require("babel-polyfill");
 
 /***/ }),
-/* 29 */
+/* 31 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -674,25 +772,25 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _path = __webpack_require__(30);
+var _path = __webpack_require__(32);
 
 var _path2 = _interopRequireDefault(_path);
 
-var _express = __webpack_require__(31);
+var _express = __webpack_require__(33);
 
 var _express2 = _interopRequireDefault(_express);
 
-var _cookieParser = __webpack_require__(32);
+var _cookieParser = __webpack_require__(34);
 
 var _cookieParser2 = _interopRequireDefault(_cookieParser);
 
-var _configure = __webpack_require__(33);
+var _configure = __webpack_require__(35);
 
 var _configure2 = _interopRequireDefault(_configure);
 
-var _utils = __webpack_require__(53);
+var _utils = __webpack_require__(54);
 
-var _render = __webpack_require__(55);
+var _render = __webpack_require__(56);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -742,25 +840,25 @@ exports.default = app;
 /* WEBPACK VAR INJECTION */}.call(exports, "/"))
 
 /***/ }),
-/* 30 */
+/* 32 */
 /***/ (function(module, exports) {
 
 module.exports = require("path");
 
 /***/ }),
-/* 31 */
+/* 33 */
 /***/ (function(module, exports) {
 
 module.exports = require("express");
 
 /***/ }),
-/* 32 */
+/* 34 */
 /***/ (function(module, exports) {
 
 module.exports = require("cookie-parser");
 
 /***/ }),
-/* 33 */
+/* 35 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -774,29 +872,29 @@ var _redux = __webpack_require__(17);
 
 var _reduxSagaThunk = __webpack_require__(18);
 
-var _reduxSaga = __webpack_require__(34);
+var _reduxSaga = __webpack_require__(36);
 
 var _reduxSaga2 = _interopRequireDefault(_reduxSaga);
 
 var _config = __webpack_require__(2);
 
-var _history = __webpack_require__(35);
+var _history = __webpack_require__(37);
 
 var _history2 = _interopRequireDefault(_history);
 
-var _cookies = __webpack_require__(38);
+var _cookies = __webpack_require__(40);
 
 var _cookies2 = _interopRequireDefault(_cookies);
 
-var _api = __webpack_require__(40);
+var _api = __webpack_require__(42);
 
 var _api2 = _interopRequireDefault(_api);
 
-var _reducer = __webpack_require__(43);
+var _reducer = __webpack_require__(45);
 
 var _reducer2 = _interopRequireDefault(_reducer);
 
-var _sagas = __webpack_require__(50);
+var _sagas = __webpack_require__(51);
 
 var _sagas2 = _interopRequireDefault(_sagas);
 
@@ -851,13 +949,13 @@ var configureStore = function configureStore(initialState) {
 exports.default = configureStore;
 
 /***/ }),
-/* 34 */
+/* 36 */
 /***/ (function(module, exports) {
 
 module.exports = require("redux-saga");
 
 /***/ }),
-/* 35 */
+/* 37 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -871,9 +969,9 @@ var _config = __webpack_require__(2);
 
 var createHistory = void 0;
 if (_config.isBrowser) {
-  createHistory = __webpack_require__(36).default;
+  createHistory = __webpack_require__(38).default;
 } else {
-  createHistory = __webpack_require__(37).default;
+  createHistory = __webpack_require__(39).default;
 }
 
 var history = createHistory();
@@ -881,19 +979,19 @@ var history = createHistory();
 exports.default = history;
 
 /***/ }),
-/* 36 */
+/* 38 */
 /***/ (function(module, exports) {
 
 module.exports = require("history/createBrowserHistory");
 
 /***/ }),
-/* 37 */
+/* 39 */
 /***/ (function(module, exports) {
 
 module.exports = require("history/createMemoryHistory");
 
 /***/ }),
-/* 38 */
+/* 40 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -903,7 +1001,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _universalCookie = __webpack_require__(39);
+var _universalCookie = __webpack_require__(41);
 
 var _universalCookie2 = _interopRequireDefault(_universalCookie);
 
@@ -912,13 +1010,13 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 exports.default = _universalCookie2.default;
 
 /***/ }),
-/* 39 */
+/* 41 */
 /***/ (function(module, exports) {
 
 module.exports = require("universal-cookie");
 
 /***/ }),
-/* 40 */
+/* 42 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -932,7 +1030,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _class, _temp;
 
-var _fetch = __webpack_require__(41);
+var _fetch = __webpack_require__(43);
 
 var _fetch2 = _interopRequireDefault(_fetch);
 
@@ -1089,7 +1187,7 @@ var Api = (_temp = _class = function () {
 exports.default = Api;
 
 /***/ }),
-/* 41 */
+/* 43 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1099,7 +1197,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _isomorphicFetch = __webpack_require__(42);
+var _isomorphicFetch = __webpack_require__(44);
 
 var _isomorphicFetch2 = _interopRequireDefault(_isomorphicFetch);
 
@@ -1108,13 +1206,13 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 exports.default = _isomorphicFetch2.default;
 
 /***/ }),
-/* 42 */
+/* 44 */
 /***/ (function(module, exports) {
 
 module.exports = require("isomorphic-fetch");
 
 /***/ }),
-/* 43 */
+/* 45 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1130,30 +1228,36 @@ var _redux = __webpack_require__(17);
 
 var _reduxSagaThunk = __webpack_require__(18);
 
-var _reducer = __webpack_require__(44);
+var _reducer = __webpack_require__(46);
 
 var _reducer2 = _interopRequireDefault(_reducer);
 
 var _const = __webpack_require__(8);
 
-var _reducer3 = __webpack_require__(46);
+var _reducer3 = __webpack_require__(48);
 
 var _reducer4 = _interopRequireDefault(_reducer3);
 
-var _const2 = __webpack_require__(22);
+var _const2 = __webpack_require__(21);
+
+var _const3 = __webpack_require__(12);
+
+var _reducers2 = __webpack_require__(50);
+
+var _reducers3 = _interopRequireDefault(_reducers2);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-var reducers = (_reducers = {}, _defineProperty(_reducers, _const.UI, _reducer2.default), _defineProperty(_reducers, _const2.FORMS, _reducer4.default), _defineProperty(_reducers, 'thunk', _reduxSagaThunk.reducer), _reducers);
+var reducers = (_reducers = {}, _defineProperty(_reducers, _const.UI, _reducer2.default), _defineProperty(_reducers, _const2.FORMS, _reducer4.default), _defineProperty(_reducers, _const3.AUTH, _reducers3.default), _defineProperty(_reducers, 'thunk', _reduxSagaThunk.reducer), _reducers);
 
 var reducer = (0, _redux.combineReducers)(reducers);
 
 exports.default = reducer;
 
 /***/ }),
-/* 44 */
+/* 46 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1225,13 +1329,13 @@ var uiReducer = function uiReducer() {
 exports.default = uiReducer;
 
 /***/ }),
-/* 45 */
+/* 47 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-md/lib/Drawers");
 
 /***/ }),
-/* 46 */
+/* 48 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1243,13 +1347,13 @@ Object.defineProperty(exports, "__esModule", {
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _utils = __webpack_require__(47);
+var _utils = __webpack_require__(49);
 
-var _actions = __webpack_require__(13);
+var _actions = __webpack_require__(11);
 
 var actions = _interopRequireWildcard(_actions);
 
-var _utils2 = __webpack_require__(21);
+var _utils2 = __webpack_require__(20);
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
@@ -1293,7 +1397,7 @@ var formsReducer = function formsReducer() {
 exports.default = formsReducer;
 
 /***/ }),
-/* 47 */
+/* 49 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1302,182 +1406,49 @@ exports.default = formsReducer;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.deepEqual = exports.compareObjects = exports.compareArrays = exports.gethumanTime = exports.jsonToFormData = exports.fetchAppState = undefined;
-
-var _reactRouterServer = __webpack_require__(20);
-
-var _isArray = __webpack_require__(48);
-
-var _isArray2 = _interopRequireDefault(_isArray);
-
-var _isObject = __webpack_require__(49);
-
-var _isObject2 = _interopRequireDefault(_isObject);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-//import { isServer } from 'config'
-
-
-//import isNumber from 'lodash/isNumber'
-var fetchAppState = exports.fetchAppState = (0, _reactRouterServer.fetchState)(function (state) {
-  return {
-    hasServerState: !!state.data
-  };
-}, function (actions) {
-  return {
-    setServerState: function setServerState(data) {
-      return actions.done({ data: data });
-    },
-    cleanServerState: function cleanServerState() {
-      return actions.done();
-    }
-  };
-});
-
-/**
- * Converts query str to object
- * @param qstr
- * @returns {{}}
- */
-//export const parseQuery = (qstr) => {
-//  const query = {}
-//  let a = (qstr[0] === '?' ? qstr.substr(1) : qstr).split('&')
-//  for (let i = 0; i < a.length; i++) {
-//    let b = a[i].split('=')
-//    query[decodeURIComponent(b[0])] = decodeURIComponent(b[1] || '')
-//  }
-//  return query
-//}
-
-var jsonToFormData = exports.jsonToFormData = function jsonToFormData(json) {
-  var formData = new FormData();
-
-  var fillWithValue = function fillWithValue(key, val) {
-    if (val !== undefined && val !== null) {
-      if ((0, _isArray2.default)(val)) {
-        fillWithArray(key, val);
-      } else if (val instanceof File) {
-        formData.append(key, val);
-      } else if ((0, _isObject2.default)(val)) {
-        fillWithDict(key, val);
-      } else {
-        formData.append(key, val);
-      }
-    }
-  };
-
-  var fillWithDict = function fillWithDict(key, val) {
-    Object.keys(val).forEach(function (valKey) {
-      fillWithValue(key + '-' + valKey, val[valKey]);
-    });
-  };
-
-  var fillWithArray = function fillWithArray(key, val) {
-    val.forEach(function (itemValue, ind) {
-      fillWithValue(key + '-' + ind, itemValue);
-    });
-    formData.append(key + '_count', val.length);
-  };
-
-  Object.keys(json).forEach(function (key) {
-    fillWithValue(key, json[key]);
-  });
-
-  //console.log('formData: ', formData)
-  //formData.forEach((v, k) => {
-  //  console.log(k, v)
-  //})
-
-  return formData;
-};
-
-var gethumanTime = exports.gethumanTime = function gethumanTime(timeDelta) {
-  if (timeDelta > 60) {
-    if (timeDelta > 3600) {
-      return timeDelta / 3600 + ' hours';
-    }
-    return timeDelta / 60 + ' min';
-  }
-  return timeDelta + ' sec';
-};
-
-var compareArrays = exports.compareArrays = function compareArrays() {
-  var array1 = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
-  var array2 = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : [];
-
-  if (!(0, _isArray2.default)(array1) || !(0, _isArray2.default)(array2)) {
-    return true;
-  }
-  if (array1.length !== array2.length) {
-    return true;
-  }
-  return array1.some(function (val, ind) {
-    return val !== array2[ind];
-  });
-};
-
-var compareObjects = exports.compareObjects = function compareObjects() {
-  var obj1 = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-  var obj2 = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
-
-  var undefinedToNull = function undefinedToNull(val) {
-    if (val === undefined) {
-      return null;
-    }
-    return val;
-  };
-  if (Object.keys(obj1).length !== Object.keys(obj2).length) {
-    return true;
-  }
-  var changed = false;
-  return Object.keys(obj1).some(function (key) {
-
-    var obj1Val = undefinedToNull(obj1[key]);
-    var obj2Val = undefinedToNull(obj2[key]);
-    if (obj1Val === null && obj2Val !== null || obj1Val !== null && obj2Val === null) {
-      return true;
-    }
-    if ((0, _isArray2.default)(obj1Val) && (0, _isArray2.default)(obj2Val)) {
-      changed = compareArrays(obj1Val, obj2Val);
-    } else if ((0, _isObject2.default)(obj1Val) && (0, _isObject2.default)(obj2Val)) {
-      changed = compareObjects(obj1Val, obj2Val);
-    } else {
-      changed = obj1Val !== obj2Val;
-    }
-    //if (changed) {
-    //  console.log('Diff ' + key, obj1Val, obj2Val)
-    //}
-    return changed;
-  });
-};
-
 var deepEqual = exports.deepEqual = function deepEqual(a, b) {
   return JSON.stringify(a) === JSON.stringify(b);
 };
 
-//export const getUniqueId = () => {
-//  if (isServer) {
-//    const t = process.hrtime()
-//    return parseFloat(`${t[0]}.${t[1]}`)
-//  }
-//  return performance.now()
-//}
-
-/***/ }),
-/* 48 */
-/***/ (function(module, exports) {
-
-module.exports = require("lodash/isArray");
-
-/***/ }),
-/* 49 */
-/***/ (function(module, exports) {
-
-module.exports = require("lodash/isObject");
-
 /***/ }),
 /* 50 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _actions = __webpack_require__(22);
+
+var actions = _interopRequireWildcard(_actions);
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+var authReducer = function authReducer() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  var action = arguments[1];
+
+  switch (action.type) {
+    case actions.SET_CURRENT_USER:
+      {
+        return _extends({}, state, {
+          currentUser: _extends({}, action.payload)
+        });
+      }
+    default:
+      return state;
+  }
+};
+
+exports.default = authReducer;
+
+/***/ }),
+/* 51 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1490,7 +1461,7 @@ exports.default = _callee;
 
 var _effects = __webpack_require__(23);
 
-var _sagas = __webpack_require__(51);
+var _sagas = __webpack_require__(52);
 
 var _sagas2 = _interopRequireDefault(_sagas);
 
@@ -1516,7 +1487,7 @@ function _callee() {
 }
 
 /***/ }),
-/* 51 */
+/* 52 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1529,7 +1500,7 @@ exports.default = _callee;
 
 var _effects = __webpack_require__(23);
 
-var _actions = __webpack_require__(13);
+var _actions = __webpack_require__(11);
 
 var a = _interopRequireWildcard(_actions);
 
@@ -1540,8 +1511,6 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 var _marked = /*#__PURE__*/regeneratorRuntime.mark(resetForm),
     _marked2 = /*#__PURE__*/regeneratorRuntime.mark(watchFormReset),
     _marked3 = /*#__PURE__*/regeneratorRuntime.mark(_callee);
-
-//import { getUniqueId } from 'utils'
 
 function resetForm(action) {
   var data;
@@ -1611,13 +1580,13 @@ function _callee() {
 }
 
 /***/ }),
-/* 52 */
+/* 53 */
 /***/ (function(module, exports) {
 
 module.exports = require("lodash/isPlainObject");
 
 /***/ }),
-/* 53 */
+/* 54 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1629,9 +1598,13 @@ Object.defineProperty(exports, "__esModule", {
 exports.getInitialUIData = getInitialUIData;
 exports.getInitialStoreData = getInitialStoreData;
 
-var _es6Promise = __webpack_require__(54);
+var _es6Promise = __webpack_require__(55);
 
 var _const = __webpack_require__(8);
+
+var _const2 = __webpack_require__(12);
+
+var _selectors = __webpack_require__(13);
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
@@ -1650,20 +1623,23 @@ function getInitialUIData(req) {
 }
 
 function getInitialStoreData(req, res) {
-
   return new _es6Promise.Promise(function (resolve) {
-    resolve(_defineProperty({}, _const.UI, getInitialUIData(req)));
+    var _resolve;
+
+    resolve((_resolve = {}, _defineProperty(_resolve, _const.UI, getInitialUIData(req)), _defineProperty(_resolve, _const2.AUTH, {
+      currentUser: (0, _selectors.selectTeacherUser)()
+    }), _resolve));
   });
 }
 
 /***/ }),
-/* 54 */
+/* 55 */
 /***/ (function(module, exports) {
 
 module.exports = require("es6-promise");
 
 /***/ }),
-/* 55 */
+/* 56 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1678,27 +1654,27 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _serializeJavascript = __webpack_require__(56);
+var _serializeJavascript = __webpack_require__(57);
 
 var _serializeJavascript2 = _interopRequireDefault(_serializeJavascript);
 
-var _server = __webpack_require__(57);
+var _server = __webpack_require__(58);
 
 var _reactRedux = __webpack_require__(4);
 
-var _reactRouter = __webpack_require__(58);
+var _reactRouter = __webpack_require__(14);
 
-var _reactRouterServer = __webpack_require__(20);
+var _reactRouterServer = __webpack_require__(59);
 
-var _App = __webpack_require__(59);
+var _App = __webpack_require__(60);
 
 var _App2 = _interopRequireDefault(_App);
 
-var _Html = __webpack_require__(112);
+var _Html = __webpack_require__(113);
 
 var _Html2 = _interopRequireDefault(_Html);
 
-var _ErrorPage = __webpack_require__(25);
+var _ErrorPage = __webpack_require__(27);
 
 var _ErrorPage2 = _interopRequireDefault(_ErrorPage);
 
@@ -1744,25 +1720,25 @@ var renderHtml = exports.renderHtml = function renderHtml(_ref2) {
 };
 
 /***/ }),
-/* 56 */
+/* 57 */
 /***/ (function(module, exports) {
 
 module.exports = require("serialize-javascript");
 
 /***/ }),
-/* 57 */
+/* 58 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-dom/server");
 
 /***/ }),
-/* 58 */
+/* 59 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-router");
+module.exports = require("react-router-server");
 
 /***/ }),
-/* 59 */
+/* 60 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1776,9 +1752,9 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactRouterDom = __webpack_require__(6);
+var _reactRouterDom = __webpack_require__(5);
 
-var _reactHelmet = __webpack_require__(9);
+var _reactHelmet = __webpack_require__(10);
 
 var _reactHelmet2 = _interopRequireDefault(_reactHelmet);
 
@@ -1789,7 +1765,7 @@ var _config = __webpack_require__(2);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 if (_config.isBrowser) {
-  __webpack_require__(111);
+  __webpack_require__(112);
 }
 
 var App = function App() {
@@ -1821,7 +1797,7 @@ var App = function App() {
 exports.default = App;
 
 /***/ }),
-/* 60 */
+/* 61 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1832,15 +1808,15 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.OneSelectWidget = exports.TextWidget = exports.FieldTemplate = exports.CheckboxWidget = undefined;
 
-var _CheckboxWidget2 = __webpack_require__(61);
+var _CheckboxWidget2 = __webpack_require__(62);
 
 var _CheckboxWidget3 = _interopRequireDefault(_CheckboxWidget2);
 
-var _FieldTemplate2 = __webpack_require__(64);
+var _FieldTemplate2 = __webpack_require__(65);
 
 var _FieldTemplate3 = _interopRequireDefault(_FieldTemplate2);
 
-var _TextWidget2 = __webpack_require__(65);
+var _TextWidget2 = __webpack_require__(66);
 
 var _TextWidget3 = _interopRequireDefault(_TextWidget2);
 
@@ -1856,7 +1832,7 @@ exports.TextWidget = _TextWidget3.default;
 exports.OneSelectWidget = _OneSelectWidget3.default;
 
 /***/ }),
-/* 61 */
+/* 62 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1874,7 +1850,7 @@ var _propTypes = __webpack_require__(1);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _SelectionControl = __webpack_require__(62);
+var _SelectionControl = __webpack_require__(63);
 
 var _SelectionControl2 = _interopRequireDefault(_SelectionControl);
 
@@ -1885,7 +1861,7 @@ var _config = __webpack_require__(2);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 if (_config.isBrowser) {
-  __webpack_require__(63);
+  __webpack_require__(64);
 }
 
 var CheckboxWidget = function CheckboxWidget(props) {
@@ -1917,19 +1893,19 @@ var CheckboxWidget = function CheckboxWidget(props) {
 exports.default = CheckboxWidget;
 
 /***/ }),
-/* 62 */
+/* 63 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-md/lib/SelectionControls/SelectionControl");
 
 /***/ }),
-/* 63 */
+/* 64 */
 /***/ (function(module, exports) {
 
 throw new Error("Module build failed: Error: Cannot find module './assets.json'\n    at Function.Module._resolveFilename (module.js:536:15)\n    at Function.Module._load (module.js:466:25)\n    at Module.require (module.js:579:17)\n    at require (internal/module.js:11:18)\n    at Object.<anonymous> (/home/ivan/Projects/hackaton/client/node_modules/css-loader/index.js??ref--1-2!/home/ivan/Projects/hackaton/client/node_modules/postcss-loader/lib/index.js??postcss!/home/ivan/Projects/hackaton/client/node_modules/sass-loader/lib/loader.js!/home/ivan/Projects/hackaton/client/src/components/fields/CheckboxWidget/styles.scss:1:79)\n    at Module._compile (module.js:635:30)\n    at Object.exec (/home/ivan/Projects/hackaton/client/node_modules/webpack/lib/NormalModule.js:129:12)\n    at /home/ivan/Projects/hackaton/client/node_modules/extract-text-webpack-plugin/dist/loader.js:131:26\n    at compile (/home/ivan/Projects/hackaton/client/node_modules/webpack/lib/Compiler.js:300:11)\n    at applyPluginsAsync.err (/home/ivan/Projects/hackaton/client/node_modules/webpack/lib/Compiler.js:510:14)\n    at next (/home/ivan/Projects/hackaton/client/node_modules/tapable/lib/Tapable.js:202:11)\n    at Compiler.<anonymous> (/home/ivan/Projects/hackaton/client/node_modules/extract-text-webpack-plugin/dist/loader.js:112:7)\n    at next (/home/ivan/Projects/hackaton/client/node_modules/tapable/lib/Tapable.js:204:14)\n    at Compiler.<anonymous> (/home/ivan/Projects/hackaton/client/node_modules/webpack/lib/CachePlugin.js:78:5)\n    at Compiler.applyPluginsAsyncSeries (/home/ivan/Projects/hackaton/client/node_modules/tapable/lib/Tapable.js:206:13)\n    at compilation.seal.err (/home/ivan/Projects/hackaton/client/node_modules/webpack/lib/Compiler.js:507:11)\n    at Compilation.applyPluginsAsyncSeries (/home/ivan/Projects/hackaton/client/node_modules/tapable/lib/Tapable.js:195:46)\n    at self.applyPluginsAsync.err (/home/ivan/Projects/hackaton/client/node_modules/webpack/lib/Compilation.js:680:19)\n    at next (/home/ivan/Projects/hackaton/client/node_modules/tapable/lib/Tapable.js:202:11)\n    at LastCallWebpackPlugin.process (/home/ivan/Projects/hackaton/client/node_modules/last-call-webpack-plugin/index.js:126:12)\n    at Compilation.<anonymous> (/home/ivan/Projects/hackaton/client/node_modules/last-call-webpack-plugin/index.js:197:12)\n    at Compilation.applyPluginsAsyncSeries (/home/ivan/Projects/hackaton/client/node_modules/tapable/lib/Tapable.js:206:13)\n    at self.applyPluginsAsync.err (/home/ivan/Projects/hackaton/client/node_modules/webpack/lib/Compilation.js:671:11)\n    at next (/home/ivan/Projects/hackaton/client/node_modules/tapable/lib/Tapable.js:202:11)\n    at Compilation.compilation.plugin (/home/ivan/Projects/hackaton/client/node_modules/@webpack-blocks/webpack2/node_modules/webpack/lib/BannerPlugin.js:67:5)\n    at next (/home/ivan/Projects/hackaton/client/node_modules/tapable/lib/Tapable.js:204:14)\n    at LastCallWebpackPlugin.process (/home/ivan/Projects/hackaton/client/node_modules/last-call-webpack-plugin/index.js:126:12)\n    at Compilation.<anonymous> (/home/ivan/Projects/hackaton/client/node_modules/last-call-webpack-plugin/index.js:194:12)\n    at Compilation.applyPluginsAsyncSeries (/home/ivan/Projects/hackaton/client/node_modules/tapable/lib/Tapable.js:206:13)\n    at self.applyPluginsAsync.err (/home/ivan/Projects/hackaton/client/node_modules/webpack/lib/Compilation.js:666:10)");
 
 /***/ }),
-/* 64 */
+/* 65 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1972,7 +1948,7 @@ var FieldTemplate = function FieldTemplate(props) {
 exports.default = FieldTemplate;
 
 /***/ }),
-/* 65 */
+/* 66 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1990,13 +1966,9 @@ var _propTypes = __webpack_require__(1);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _TextField = __webpack_require__(66);
+var _TextField = __webpack_require__(67);
 
 var _TextField2 = _interopRequireDefault(_TextField);
-
-var _isString = __webpack_require__(67);
-
-var _isString2 = _interopRequireDefault(_isString);
 
 var _isInteger = __webpack_require__(68);
 
@@ -2005,34 +1977,8 @@ var _isInteger2 = _interopRequireDefault(_isInteger);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var TextWidget = function TextWidget(props) {
-  //const options = {
-  //  type: 'text',
-  //}
   var type = props.options.type || props.schema.type === 'number' ? 'number' : 'text';
-  //if (props.schema.type === 'number') {
-  //  type = 'number'
-  //if (isInteger(props.schema.minimum)) {
-  //  options.min = props.schema.minimum
-  //}
-  //if (isInteger(props.schema.maximum)) {
-  //  options.max = props.schema.maximum
-  //}
-  //if (isInteger(props.schema.multipleOf)) {
-  //  options.step = props.schema.multipleOf
-  //}
-  //}
 
-  //if (props.options.rows) {
-  //  options.rows = props.options.rows
-  //  options.maxRows = 10
-  //}
-  //if (props.options.maxRows) {
-  //  options.maxRows = props.options.maxRows
-  //}
-  //if (isString(props.options.type)) {
-  //  options.type = props.options.type
-  //}
-  console.log(props);
   return _react2.default.createElement(_TextField2.default, {
     id: props.id,
     name: props.id,
@@ -2077,16 +2023,10 @@ TextWidget.defaultProps = {
 exports.default = TextWidget;
 
 /***/ }),
-/* 66 */
-/***/ (function(module, exports) {
-
-module.exports = require("react-md/lib/TextFields/TextField");
-
-/***/ }),
 /* 67 */
 /***/ (function(module, exports) {
 
-module.exports = require("lodash/isString");
+module.exports = require("react-md/lib/TextFields/TextField");
 
 /***/ }),
 /* 68 */
@@ -2177,11 +2117,11 @@ var _BaseForm2 = __webpack_require__(72);
 
 var _BaseForm3 = _interopRequireDefault(_BaseForm2);
 
-var _AddCourseForm2 = __webpack_require__(76);
+var _AddCourseForm2 = __webpack_require__(75);
 
 var _AddCourseForm3 = _interopRequireDefault(_AddCourseForm2);
 
-var _AnswerForm2 = __webpack_require__(77);
+var _AnswerForm2 = __webpack_require__(76);
 
 var _AnswerForm3 = _interopRequireDefault(_AnswerForm2);
 
@@ -2224,9 +2164,9 @@ var _reactRedux = __webpack_require__(4);
 
 var _components = __webpack_require__(3);
 
-var _actions = __webpack_require__(14);
+var _actions = __webpack_require__(9);
 
-var _selectors = __webpack_require__(7);
+var _selectors = __webpack_require__(6);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -2435,30 +2375,6 @@ var selectDialogData = exports.selectDialogData = function selectDialogData(stat
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-var selectUser = exports.selectUser = function selectUser() {
-  return {
-    username: 'profichain1',
-    pass: 'P5KPJmRy6PdfDiKpCnJ99ZoQvMd1GK7jHeo5YJX18mrVd2BnJwoq'
-  };
-};
-
-var selectStudent = exports.selectStudent = function selectStudent() {
-  return {
-    username: 'profichain2',
-    pass: 'P5JDYpRUTaPh6rfsfhRteZwgnRMx5fHupT4jiZxE4YkCDz3vR8ah'
-  };
-};
-
-/***/ }),
-/* 76 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -2472,11 +2388,11 @@ var _propTypes = __webpack_require__(1);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _Button = __webpack_require__(5);
+var _Button = __webpack_require__(7);
 
 var _Button2 = _interopRequireDefault(_Button);
 
-var _reactRouterDom = __webpack_require__(6);
+var _reactRouterDom = __webpack_require__(5);
 
 var _components = __webpack_require__(3);
 
@@ -2537,7 +2453,7 @@ var AddCourseForm = (_temp = _class = function (_PureComponent) {
 exports.default = AddCourseForm;
 
 /***/ }),
-/* 77 */
+/* 76 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2559,11 +2475,11 @@ var _propTypes = __webpack_require__(1);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _Button = __webpack_require__(5);
+var _Button = __webpack_require__(7);
 
 var _Button2 = _interopRequireDefault(_Button);
 
-var _reactRouterDom = __webpack_require__(6);
+var _reactRouterDom = __webpack_require__(5);
 
 var _components = __webpack_require__(3);
 
@@ -2586,7 +2502,7 @@ var schema = {
 var uiSchema = {
   answer: {
     'ui:options': {
-      rows: 10
+      rows: 5
     }
   }
 };
@@ -2623,7 +2539,7 @@ var AnswerForm = (_temp = _class = function (_PureComponent) {
 exports.default = AnswerForm;
 
 /***/ }),
-/* 78 */
+/* 77 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2634,7 +2550,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.IndexPage = exports.ErrorPage = exports.NotFound = undefined;
 
-var _courses = __webpack_require__(79);
+var _courses = __webpack_require__(78);
 
 Object.keys(_courses).forEach(function (key) {
   if (key === "default" || key === "__esModule") return;
@@ -2646,15 +2562,15 @@ Object.keys(_courses).forEach(function (key) {
   });
 });
 
-var _NotFound2 = __webpack_require__(94);
+var _NotFound2 = __webpack_require__(95);
 
 var _NotFound3 = _interopRequireDefault(_NotFound2);
 
-var _ErrorPage2 = __webpack_require__(25);
+var _ErrorPage2 = __webpack_require__(27);
 
 var _ErrorPage3 = _interopRequireDefault(_ErrorPage2);
 
-var _IndexPage2 = __webpack_require__(95);
+var _IndexPage2 = __webpack_require__(96);
 
 var _IndexPage3 = _interopRequireDefault(_IndexPage2);
 
@@ -2663,6 +2579,36 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 exports.NotFound = _NotFound3.default;
 exports.ErrorPage = _ErrorPage3.default;
 exports.IndexPage = _IndexPage3.default;
+
+/***/ }),
+/* 78 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.CoursesItemPage = exports.CoursesListPage = exports.CoursesAddPage = undefined;
+
+var _add = __webpack_require__(79);
+
+var _add2 = _interopRequireDefault(_add);
+
+var _list = __webpack_require__(85);
+
+var _list2 = _interopRequireDefault(_list);
+
+var _item = __webpack_require__(92);
+
+var _item2 = _interopRequireDefault(_item);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.CoursesAddPage = _add2.default;
+exports.CoursesListPage = _list2.default;
+exports.CoursesItemPage = _item2.default;
 
 /***/ }),
 /* 79 */
@@ -2674,40 +2620,10 @@ exports.IndexPage = _IndexPage3.default;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.CoursesItemPage = exports.CoursesListPage = exports.CoursesAddPage = undefined;
-
-var _add = __webpack_require__(80);
-
-var _add2 = _interopRequireDefault(_add);
-
-var _list = __webpack_require__(83);
-
-var _list2 = _interopRequireDefault(_list);
-
-var _item = __webpack_require__(91);
-
-var _item2 = _interopRequireDefault(_item);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-exports.CoursesAddPage = _add2.default;
-exports.CoursesListPage = _list2.default;
-exports.CoursesItemPage = _item2.default;
-
-/***/ }),
-/* 80 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _dec, _class, _class2, _temp;
+var _dec, _dec2, _class, _class2, _temp;
 
 var _react = __webpack_require__(0);
 
@@ -2717,41 +2633,43 @@ var _propTypes = __webpack_require__(1);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _Button = __webpack_require__(5);
+var _Button = __webpack_require__(7);
 
 var _Button2 = _interopRequireDefault(_Button);
 
-var _Card = __webpack_require__(10);
+var _Card = __webpack_require__(15);
 
 var _Card2 = _interopRequireDefault(_Card);
 
-var _CardTitle = __webpack_require__(11);
+var _CardTitle = __webpack_require__(25);
 
 var _CardTitle2 = _interopRequireDefault(_CardTitle);
 
-var _CardText = __webpack_require__(12);
+var _CardText = __webpack_require__(26);
 
 var _CardText2 = _interopRequireDefault(_CardText);
 
-var _CardActions = __webpack_require__(15);
+var _CardActions = __webpack_require__(80);
 
 var _CardActions2 = _interopRequireDefault(_CardActions);
 
 var _reactRedux = __webpack_require__(4);
 
-var _golosJs = __webpack_require__(16);
-
-var _golosJs2 = _interopRequireDefault(_golosJs);
-
 var _slug = __webpack_require__(81);
 
 var _slug2 = _interopRequireDefault(_slug);
+
+var _golos = __webpack_require__(16);
+
+var _golos2 = _interopRequireDefault(_golos);
 
 var _config = __webpack_require__(2);
 
 var _components = __webpack_require__(3);
 
-var _selectors = __webpack_require__(7);
+var _selectors = __webpack_require__(6);
+
+var _decorators = __webpack_require__(83);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -2762,14 +2680,14 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 if (_config.isBrowser) {
-  __webpack_require__(82);
+  __webpack_require__(84);
 }
 
-var CoursesAddPage = (_dec = (0, _reactRedux.connect)(function (state) {
+var CoursesAddPage = (_dec = (0, _decorators.teacherRoleRequired)(), _dec2 = (0, _reactRedux.connect)(function (state) {
   return {
-    user: (0, _selectors.selectUser)(state)
+    user: (0, _selectors.selectCurrentUser)(state)
   };
-}), _dec(_class = (_temp = _class2 = function (_PureComponent) {
+}), _dec(_class = _dec2(_class = (_temp = _class2 = function (_PureComponent) {
   _inherits(CoursesAddPage, _PureComponent);
 
   function CoursesAddPage(props) {
@@ -2785,13 +2703,10 @@ var CoursesAddPage = (_dec = (0, _reactRedux.connect)(function (state) {
     key: 'onSubmit',
     value: function onSubmit(data) {
       console.log(data);
-      var postingWif = _golosJs2.default.auth.toWif(this.props.user.username, this.props.user.pass, 'posting');
-
+      var postingWif = _golos2.default.auth.toWif(this.props.user.username, this.props.user.pass, 'posting');
       //golos.broadcast.comment(wif, parentAuthor, parentPermlink, author, permlink, title, body, jsonMetadata, function(err, result) {
-
-
-      _golosJs2.default.broadcast.comment(postingWif, '', 'profichain', this.props.user.username, ((0, _slug2.default)(data.formData.title) + '-' + new Date().getTime()).toLocaleLowerCase(), data.formData.title, data.formData.desc, {}, function (err, result) {
-        console.log(err, result);
+      _golos2.default.broadcast.comment(postingWif, '', 'profichain', this.props.user.username, ((0, _slug2.default)(data.formData.title) + '-' + new Date().getTime()).toLocaleLowerCase(), data.formData.title, data.formData.desc, {}, function (err, result) {
+        console.log('submit post: ', err, result);
         if (!err) {
           location.href = '/courses';
         }
@@ -2837,8 +2752,14 @@ var CoursesAddPage = (_dec = (0, _reactRedux.connect)(function (state) {
   }]);
 
   return CoursesAddPage;
-}(_react.PureComponent), _class2.defaultProps = {}, _temp)) || _class);
+}(_react.PureComponent), _class2.defaultProps = {}, _temp)) || _class) || _class);
 exports.default = CoursesAddPage;
+
+/***/ }),
+/* 80 */
+/***/ (function(module, exports) {
+
+module.exports = require("react-md/lib/Cards/CardActions");
 
 /***/ }),
 /* 81 */
@@ -2850,10 +2771,61 @@ module.exports = require("slug");
 /* 82 */
 /***/ (function(module, exports) {
 
-throw new Error("Module build failed: Error: Cannot find module './assets.json'\n    at Function.Module._resolveFilename (module.js:536:15)\n    at Function.Module._load (module.js:466:25)\n    at Module.require (module.js:579:17)\n    at require (internal/module.js:11:18)\n    at Object.<anonymous> (/home/ivan/Projects/hackaton/client/node_modules/css-loader/index.js??ref--1-2!/home/ivan/Projects/hackaton/client/node_modules/postcss-loader/lib/index.js??postcss!/home/ivan/Projects/hackaton/client/node_modules/sass-loader/lib/loader.js!/home/ivan/Projects/hackaton/client/src/components/pages/courses/add/styles.scss:1:79)\n    at Module._compile (module.js:635:30)\n    at Object.exec (/home/ivan/Projects/hackaton/client/node_modules/webpack/lib/NormalModule.js:129:12)\n    at /home/ivan/Projects/hackaton/client/node_modules/extract-text-webpack-plugin/dist/loader.js:131:26\n    at compile (/home/ivan/Projects/hackaton/client/node_modules/webpack/lib/Compiler.js:300:11)\n    at applyPluginsAsync.err (/home/ivan/Projects/hackaton/client/node_modules/webpack/lib/Compiler.js:510:14)\n    at next (/home/ivan/Projects/hackaton/client/node_modules/tapable/lib/Tapable.js:202:11)\n    at Compiler.<anonymous> (/home/ivan/Projects/hackaton/client/node_modules/extract-text-webpack-plugin/dist/loader.js:112:7)\n    at next (/home/ivan/Projects/hackaton/client/node_modules/tapable/lib/Tapable.js:204:14)\n    at Compiler.<anonymous> (/home/ivan/Projects/hackaton/client/node_modules/webpack/lib/CachePlugin.js:78:5)\n    at Compiler.applyPluginsAsyncSeries (/home/ivan/Projects/hackaton/client/node_modules/tapable/lib/Tapable.js:206:13)\n    at compilation.seal.err (/home/ivan/Projects/hackaton/client/node_modules/webpack/lib/Compiler.js:507:11)\n    at Compilation.applyPluginsAsyncSeries (/home/ivan/Projects/hackaton/client/node_modules/tapable/lib/Tapable.js:195:46)\n    at self.applyPluginsAsync.err (/home/ivan/Projects/hackaton/client/node_modules/webpack/lib/Compilation.js:680:19)\n    at next (/home/ivan/Projects/hackaton/client/node_modules/tapable/lib/Tapable.js:202:11)\n    at LastCallWebpackPlugin.process (/home/ivan/Projects/hackaton/client/node_modules/last-call-webpack-plugin/index.js:126:12)\n    at Compilation.<anonymous> (/home/ivan/Projects/hackaton/client/node_modules/last-call-webpack-plugin/index.js:197:12)\n    at Compilation.applyPluginsAsyncSeries (/home/ivan/Projects/hackaton/client/node_modules/tapable/lib/Tapable.js:206:13)\n    at self.applyPluginsAsync.err (/home/ivan/Projects/hackaton/client/node_modules/webpack/lib/Compilation.js:671:11)\n    at next (/home/ivan/Projects/hackaton/client/node_modules/tapable/lib/Tapable.js:202:11)\n    at Compilation.compilation.plugin (/home/ivan/Projects/hackaton/client/node_modules/@webpack-blocks/webpack2/node_modules/webpack/lib/BannerPlugin.js:67:5)\n    at next (/home/ivan/Projects/hackaton/client/node_modules/tapable/lib/Tapable.js:204:14)\n    at LastCallWebpackPlugin.process (/home/ivan/Projects/hackaton/client/node_modules/last-call-webpack-plugin/index.js:126:12)\n    at Compilation.<anonymous> (/home/ivan/Projects/hackaton/client/node_modules/last-call-webpack-plugin/index.js:194:12)\n    at Compilation.applyPluginsAsyncSeries (/home/ivan/Projects/hackaton/client/node_modules/tapable/lib/Tapable.js:206:13)\n    at self.applyPluginsAsync.err (/home/ivan/Projects/hackaton/client/node_modules/webpack/lib/Compilation.js:666:10)");
+module.exports = require("golos-js");
 
 /***/ }),
 /* 83 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.teacherRoleRequired = teacherRoleRequired;
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRedux = __webpack_require__(4);
+
+var _reactRouter = __webpack_require__(14);
+
+var _selectors = __webpack_require__(13);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function teacherRoleRequired() {
+  var opts = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : { redirectUrl: '/' };
+
+
+  return function (DecoratedComponent) {
+    var wrapper = function wrapper(props) {
+      console.log(props.userRole);
+      if (props.userRole !== 'teacher') {
+        return _react2.default.createElement(_reactRouter.Redirect, { to: opts.redirectUrl });
+      }
+      return _react2.default.createElement(DecoratedComponent, props);
+    };
+
+    return (0, _reactRedux.connect)(function (state) {
+      return {
+        userRole: (0, _selectors.selectCurrentUserRole)(state)
+      };
+    })(wrapper);
+  };
+}
+
+/***/ }),
+/* 84 */
+/***/ (function(module, exports) {
+
+throw new Error("Module build failed: Error: Cannot find module './assets.json'\n    at Function.Module._resolveFilename (module.js:536:15)\n    at Function.Module._load (module.js:466:25)\n    at Module.require (module.js:579:17)\n    at require (internal/module.js:11:18)\n    at Object.<anonymous> (/home/ivan/Projects/hackaton/client/node_modules/css-loader/index.js??ref--1-2!/home/ivan/Projects/hackaton/client/node_modules/postcss-loader/lib/index.js??postcss!/home/ivan/Projects/hackaton/client/node_modules/sass-loader/lib/loader.js!/home/ivan/Projects/hackaton/client/src/components/pages/courses/add/styles.scss:1:79)\n    at Module._compile (module.js:635:30)\n    at Object.exec (/home/ivan/Projects/hackaton/client/node_modules/webpack/lib/NormalModule.js:129:12)\n    at /home/ivan/Projects/hackaton/client/node_modules/extract-text-webpack-plugin/dist/loader.js:131:26\n    at compile (/home/ivan/Projects/hackaton/client/node_modules/webpack/lib/Compiler.js:300:11)\n    at applyPluginsAsync.err (/home/ivan/Projects/hackaton/client/node_modules/webpack/lib/Compiler.js:510:14)\n    at next (/home/ivan/Projects/hackaton/client/node_modules/tapable/lib/Tapable.js:202:11)\n    at Compiler.<anonymous> (/home/ivan/Projects/hackaton/client/node_modules/extract-text-webpack-plugin/dist/loader.js:112:7)\n    at next (/home/ivan/Projects/hackaton/client/node_modules/tapable/lib/Tapable.js:204:14)\n    at Compiler.<anonymous> (/home/ivan/Projects/hackaton/client/node_modules/webpack/lib/CachePlugin.js:78:5)\n    at Compiler.applyPluginsAsyncSeries (/home/ivan/Projects/hackaton/client/node_modules/tapable/lib/Tapable.js:206:13)\n    at compilation.seal.err (/home/ivan/Projects/hackaton/client/node_modules/webpack/lib/Compiler.js:507:11)\n    at Compilation.applyPluginsAsyncSeries (/home/ivan/Projects/hackaton/client/node_modules/tapable/lib/Tapable.js:195:46)\n    at self.applyPluginsAsync.err (/home/ivan/Projects/hackaton/client/node_modules/webpack/lib/Compilation.js:680:19)\n    at next (/home/ivan/Projects/hackaton/client/node_modules/tapable/lib/Tapable.js:202:11)\n    at LastCallWebpackPlugin.process (/home/ivan/Projects/hackaton/client/node_modules/last-call-webpack-plugin/index.js:126:12)\n    at Compilation.<anonymous> (/home/ivan/Projects/hackaton/client/node_modules/last-call-webpack-plugin/index.js:197:12)\n    at Compilation.applyPluginsAsyncSeries (/home/ivan/Projects/hackaton/client/node_modules/tapable/lib/Tapable.js:206:13)\n    at self.applyPluginsAsync.err (/home/ivan/Projects/hackaton/client/node_modules/webpack/lib/Compilation.js:671:11)\n    at next (/home/ivan/Projects/hackaton/client/node_modules/tapable/lib/Tapable.js:202:11)\n    at Compilation.compilation.plugin (/home/ivan/Projects/hackaton/client/node_modules/@webpack-blocks/webpack2/node_modules/webpack/lib/BannerPlugin.js:67:5)\n    at next (/home/ivan/Projects/hackaton/client/node_modules/tapable/lib/Tapable.js:204:14)\n    at LastCallWebpackPlugin.process (/home/ivan/Projects/hackaton/client/node_modules/last-call-webpack-plugin/index.js:126:12)\n    at Compilation.<anonymous> (/home/ivan/Projects/hackaton/client/node_modules/last-call-webpack-plugin/index.js:194:12)\n    at Compilation.applyPluginsAsyncSeries (/home/ivan/Projects/hackaton/client/node_modules/tapable/lib/Tapable.js:206:13)\n    at self.applyPluginsAsync.err (/home/ivan/Projects/hackaton/client/node_modules/webpack/lib/Compilation.js:666:10)");
+
+/***/ }),
+/* 85 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2877,61 +2849,45 @@ var _propTypes = __webpack_require__(1);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _Button = __webpack_require__(5);
-
-var _Button2 = _interopRequireDefault(_Button);
-
-var _Card = __webpack_require__(10);
+var _Card = __webpack_require__(15);
 
 var _Card2 = _interopRequireDefault(_Card);
 
-var _CardTitle = __webpack_require__(11);
-
-var _CardTitle2 = _interopRequireDefault(_CardTitle);
-
-var _CardText = __webpack_require__(12);
-
-var _CardText2 = _interopRequireDefault(_CardText);
-
-var _CardActions = __webpack_require__(15);
-
-var _CardActions2 = _interopRequireDefault(_CardActions);
-
-var _DataTable = __webpack_require__(84);
+var _DataTable = __webpack_require__(86);
 
 var _DataTable2 = _interopRequireDefault(_DataTable);
 
-var _TableHeader = __webpack_require__(85);
+var _TableHeader = __webpack_require__(87);
 
 var _TableHeader2 = _interopRequireDefault(_TableHeader);
 
-var _TableBody = __webpack_require__(86);
+var _TableBody = __webpack_require__(88);
 
 var _TableBody2 = _interopRequireDefault(_TableBody);
 
-var _TableRow = __webpack_require__(87);
+var _TableRow = __webpack_require__(89);
 
 var _TableRow2 = _interopRequireDefault(_TableRow);
 
-var _TableColumn = __webpack_require__(88);
+var _TableColumn = __webpack_require__(90);
 
 var _TableColumn2 = _interopRequireDefault(_TableColumn);
 
-var _TablePagination = __webpack_require__(89);
-
-var _TablePagination2 = _interopRequireDefault(_TablePagination);
-
 var _reactRedux = __webpack_require__(4);
 
-var _golosJs = __webpack_require__(16);
+var _reactRouterDom = __webpack_require__(5);
 
-var _golosJs2 = _interopRequireDefault(_golosJs);
+var _Button = __webpack_require__(7);
 
-var _reactRouterDom = __webpack_require__(6);
+var _Button2 = _interopRequireDefault(_Button);
+
+var _golos = __webpack_require__(16);
+
+var _golos2 = _interopRequireDefault(_golos);
 
 var _config = __webpack_require__(2);
 
-var _selectors = __webpack_require__(7);
+var _selectors = __webpack_require__(6);
 
 var _components = __webpack_require__(3);
 
@@ -2944,13 +2900,13 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 if (_config.isBrowser) {
-  __webpack_require__(90);
-  window.golos = _golosJs2.default;
+  __webpack_require__(91);
+  window.golos = _golos2.default;
 }
 
 var CoursesListPage = (_dec = (0, _reactRedux.connect)(function (state) {
   return {
-    user: (0, _selectors.selectUser)(state)
+    teacher: (0, _selectors.selectTeacherUser)(state)
   };
 }), _dec(_class = (_temp = _class2 = function (_PureComponent) {
   _inherits(CoursesListPage, _PureComponent);
@@ -2971,7 +2927,7 @@ var CoursesListPage = (_dec = (0, _reactRedux.connect)(function (state) {
     value: function componentWillMount() {
       var _this2 = this;
 
-      _golosJs2.default.api.getState('@' + this.props.user.username, function (err, result) {
+      _golos2.default.api.getState('@' + this.props.teacher.username, function (err, result) {
         //console.log('getState', err, result)
         if (result && result.content) {
           _this2.setState(function (prevState) {
@@ -2991,7 +2947,6 @@ var CoursesListPage = (_dec = (0, _reactRedux.connect)(function (state) {
           });
         }
       });
-      //go
     }
   }, {
     key: 'render',
@@ -3025,7 +2980,8 @@ var CoursesListPage = (_dec = (0, _reactRedux.connect)(function (state) {
                   _TableColumn2.default,
                   null,
                   '\u0414\u0430\u0442\u0430'
-                )
+                ),
+                _react2.default.createElement(_TableColumn2.default, null)
               )
             ),
             _react2.default.createElement(
@@ -3040,18 +2996,30 @@ var CoursesListPage = (_dec = (0, _reactRedux.connect)(function (state) {
                   _react2.default.createElement(
                     _TableColumn2.default,
                     null,
-                    _react2.default.createElement(
-                      _reactRouterDom.Link,
-                      {
-                        to: '/course' + course.url
-                      },
-                      course.title
-                    )
+                    course.title
                   ),
                   _react2.default.createElement(
                     _TableColumn2.default,
                     null,
                     course.created
+                  ),
+                  _react2.default.createElement(
+                    _TableColumn2.default,
+                    null,
+                    _react2.default.createElement(
+                      _reactRouterDom.Link,
+                      {
+                        to: '/course' + course.url
+                      },
+                      _react2.default.createElement(
+                        _Button2.default,
+                        {
+                          icon: true,
+                          primary: true
+                        },
+                        'chevron_right'
+                      )
+                    )
                   )
                 );
               })
@@ -3067,49 +3035,43 @@ var CoursesListPage = (_dec = (0, _reactRedux.connect)(function (state) {
 exports.default = CoursesListPage;
 
 /***/ }),
-/* 84 */
+/* 86 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-md/lib/DataTables/DataTable");
 
 /***/ }),
-/* 85 */
+/* 87 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-md/lib/DataTables/TableHeader");
 
 /***/ }),
-/* 86 */
+/* 88 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-md/lib/DataTables/TableBody");
 
 /***/ }),
-/* 87 */
+/* 89 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-md/lib/DataTables/TableRow");
 
 /***/ }),
-/* 88 */
+/* 90 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-md/lib/DataTables/TableColumn");
 
 /***/ }),
-/* 89 */
-/***/ (function(module, exports) {
-
-module.exports = require("react-md/lib/DataTables/TablePagination");
-
-/***/ }),
-/* 90 */
+/* 91 */
 /***/ (function(module, exports) {
 
 throw new Error("Module build failed: Error: Cannot find module './assets.json'\n    at Function.Module._resolveFilename (module.js:536:15)\n    at Function.Module._load (module.js:466:25)\n    at Module.require (module.js:579:17)\n    at require (internal/module.js:11:18)\n    at Object.<anonymous> (/home/ivan/Projects/hackaton/client/node_modules/css-loader/index.js??ref--1-2!/home/ivan/Projects/hackaton/client/node_modules/postcss-loader/lib/index.js??postcss!/home/ivan/Projects/hackaton/client/node_modules/sass-loader/lib/loader.js!/home/ivan/Projects/hackaton/client/src/components/pages/courses/list/styles.scss:1:79)\n    at Module._compile (module.js:635:30)\n    at Object.exec (/home/ivan/Projects/hackaton/client/node_modules/webpack/lib/NormalModule.js:129:12)\n    at /home/ivan/Projects/hackaton/client/node_modules/extract-text-webpack-plugin/dist/loader.js:131:26\n    at compile (/home/ivan/Projects/hackaton/client/node_modules/webpack/lib/Compiler.js:300:11)\n    at applyPluginsAsync.err (/home/ivan/Projects/hackaton/client/node_modules/webpack/lib/Compiler.js:510:14)\n    at next (/home/ivan/Projects/hackaton/client/node_modules/tapable/lib/Tapable.js:202:11)\n    at Compiler.<anonymous> (/home/ivan/Projects/hackaton/client/node_modules/extract-text-webpack-plugin/dist/loader.js:112:7)\n    at next (/home/ivan/Projects/hackaton/client/node_modules/tapable/lib/Tapable.js:204:14)\n    at Compiler.<anonymous> (/home/ivan/Projects/hackaton/client/node_modules/webpack/lib/CachePlugin.js:78:5)\n    at Compiler.applyPluginsAsyncSeries (/home/ivan/Projects/hackaton/client/node_modules/tapable/lib/Tapable.js:206:13)\n    at compilation.seal.err (/home/ivan/Projects/hackaton/client/node_modules/webpack/lib/Compiler.js:507:11)\n    at Compilation.applyPluginsAsyncSeries (/home/ivan/Projects/hackaton/client/node_modules/tapable/lib/Tapable.js:195:46)\n    at self.applyPluginsAsync.err (/home/ivan/Projects/hackaton/client/node_modules/webpack/lib/Compilation.js:680:19)\n    at next (/home/ivan/Projects/hackaton/client/node_modules/tapable/lib/Tapable.js:202:11)\n    at LastCallWebpackPlugin.process (/home/ivan/Projects/hackaton/client/node_modules/last-call-webpack-plugin/index.js:126:12)\n    at Compilation.<anonymous> (/home/ivan/Projects/hackaton/client/node_modules/last-call-webpack-plugin/index.js:197:12)\n    at Compilation.applyPluginsAsyncSeries (/home/ivan/Projects/hackaton/client/node_modules/tapable/lib/Tapable.js:206:13)\n    at self.applyPluginsAsync.err (/home/ivan/Projects/hackaton/client/node_modules/webpack/lib/Compilation.js:671:11)\n    at next (/home/ivan/Projects/hackaton/client/node_modules/tapable/lib/Tapable.js:202:11)\n    at Compilation.compilation.plugin (/home/ivan/Projects/hackaton/client/node_modules/@webpack-blocks/webpack2/node_modules/webpack/lib/BannerPlugin.js:67:5)\n    at next (/home/ivan/Projects/hackaton/client/node_modules/tapable/lib/Tapable.js:204:14)\n    at LastCallWebpackPlugin.process (/home/ivan/Projects/hackaton/client/node_modules/last-call-webpack-plugin/index.js:126:12)\n    at Compilation.<anonymous> (/home/ivan/Projects/hackaton/client/node_modules/last-call-webpack-plugin/index.js:194:12)\n    at Compilation.applyPluginsAsyncSeries (/home/ivan/Projects/hackaton/client/node_modules/tapable/lib/Tapable.js:206:13)\n    at self.applyPluginsAsync.err (/home/ivan/Projects/hackaton/client/node_modules/webpack/lib/Compilation.js:666:10)");
 
 /***/ }),
-/* 91 */
+/* 92 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3133,37 +3095,39 @@ var _propTypes = __webpack_require__(1);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _Button = __webpack_require__(5);
+var _Button = __webpack_require__(7);
 
 var _Button2 = _interopRequireDefault(_Button);
 
-var _Card = __webpack_require__(10);
+var _Card = __webpack_require__(15);
 
 var _Card2 = _interopRequireDefault(_Card);
 
-var _CardTitle = __webpack_require__(11);
+var _CardTitle = __webpack_require__(25);
 
 var _CardTitle2 = _interopRequireDefault(_CardTitle);
 
-var _CardText = __webpack_require__(12);
+var _CardText = __webpack_require__(26);
 
 var _CardText2 = _interopRequireDefault(_CardText);
 
-var _reactRouterDom = __webpack_require__(6);
+var _reactRouterDom = __webpack_require__(5);
 
 var _reactRedux = __webpack_require__(4);
 
-var _golosJs = __webpack_require__(16);
-
-var _golosJs2 = _interopRequireDefault(_golosJs);
-
-var _cryptoJs = __webpack_require__(92);
+var _cryptoJs = __webpack_require__(93);
 
 var _cryptoJs2 = _interopRequireDefault(_cryptoJs);
 
+var _golos = __webpack_require__(16);
+
+var _golos2 = _interopRequireDefault(_golos);
+
 var _config = __webpack_require__(2);
 
-var _selectors = __webpack_require__(7);
+var _selectors = __webpack_require__(6);
+
+var _actions = __webpack_require__(9);
 
 var _components = __webpack_require__(3);
 
@@ -3178,15 +3142,20 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 if (_config.isBrowser) {
-  __webpack_require__(93);
-  window.golos = _golosJs2.default;
+  __webpack_require__(94);
+  window.golos = _golos2.default;
   window.CryptoJS = _cryptoJs2.default;
 }
 
 var CoursesItemPage = (_dec = (0, _reactRedux.connect)(function (state) {
   return {
-    user: (0, _selectors.selectUser)(state),
-    student: (0, _selectors.selectStudent)(state)
+    user: (0, _selectors.selectCurrentUser)(state)
+  };
+}, function (dispatch) {
+  return {
+    resetAnswerForm: function resetAnswerForm() {
+      return dispatch((0, _actions.resetFormData)(_components.AnswerForm.formName));
+    }
   };
 }), _dec(_class = (_temp = _class2 = function (_PureComponent) {
   _inherits(CoursesItemPage, _PureComponent);
@@ -3213,90 +3182,81 @@ var CoursesItemPage = (_dec = (0, _reactRedux.connect)(function (state) {
   }
 
   _createClass(CoursesItemPage, [{
+    key: 'postContentData',
+    value: function postContentData(content) {
+      return {
+        id: content.id,
+        title: content.title,
+        body: content.body,
+        created: content.created,
+        permlink: content.permlink,
+        author: content.author
+      };
+    }
+  }, {
     key: 'fetchPost',
     value: function fetchPost() {
       var _this2 = this;
 
-      var url = this.props.location.pathname.slice(7);
-      _golosJs2.default.api.getState(url, function (err, result) {
-        _golosJs2.default.api.getAccounts([_this2.props.user.username], function (getAccountsErr, getAccountsResults) {
-          var memoKey = getAccountsResults[0].memo_key;
+      if (_config.isBrowser) {
+        var url = this.props.location.pathname.slice(7);
+        _golos2.default.api.getState(url, function (err, result) {
+          var postContent = Object.values(result.content).filter(function (c) {
+            return c.url === url;
+          })[0];
 
-          console.log('getState', err, result);
-          if (result && result.content) {
-            _this2.setState(function (prevState) {
-              var content = Object.values(result.content).filter(function (c) {
-                return c.url === url;
-              })[0] || Object.values(result.content)[0];
-              var replies = [];
-              var post = {
-                title: content.title,
-                created: content.created,
-                body: content.body,
-                permlink: content.permlink
-              };
-              if (content.replies && content.replies.length > 0) {
-                replies = content.replies.map(function (r) {
-                  var content = result.content[r];
+          _golos2.default.api.getAccounts([postContent.author], function (getAccountsErr, getAccountsResults) {
+            console.log('getState', err, result);
+            if (result && result.content) {
+              _this2.setState(function (prevState) {
+                var replies = [];
 
-                  var reply = {
-                    id: content.id,
-                    title: content.title,
-                    created: content.created,
-                    body: content.body,
-                    encrypted: true,
-                    permlink: content.permlink
-                  };
+                if (postContent.replies && postContent.replies.length > 0) {
+                  replies = postContent.replies.map(function (r) {
+                    var replyContent = result.content[r];
+                    var reply = Object.assign({}, _this2.postContentData(replyContent), { encrypted: true, replies: [] });
 
-                  if (content.replies && content.replies.length > 0) {
-                    reply.replies = content.replies.map(function (r) {
-                      var content = result.content[r];
-
-                      return {
-                        id: content.id,
-                        title: content.title,
-                        created: content.created,
-                        body: content.body,
-                        encrypted: true,
-                        permlink: content.permlink
-                      };
-                    });
-                  }
-
-                  return reply;
+                    if (replyContent.replies && replyContent.replies.length > 0) {
+                      reply.replies = replyContent.replies.map(function (r) {
+                        var answerContent = result.content[r];
+                        return _this2.postContentData(answerContent);
+                      });
+                    }
+                    return reply;
+                  });
+                }
+                return _extends({}, prevState, {
+                  post: _this2.postContentData(postContent),
+                  replies: replies,
+                  memoKey: getAccountsResults[0].memo_key
                 });
-              }
-              return _extends({}, prevState, {
-                post: post,
-                replies: replies,
-                memoKey: memoKey
               });
-            });
-          }
+            }
+          });
         });
-      });
+      }
     }
   }, {
     key: 'componentWillMount',
     value: function componentWillMount() {
       this.fetchPost();
+      this.props.resetAnswerForm();
     }
   }, {
     key: 'onAnswerSubmit',
     value: function onAnswerSubmit(data) {
       var _this3 = this;
 
-      var msgData = [this.props.student.username, data.formData.answer];
+      var msgData = [this.props.user.username, data.formData.answer];
       var encryptedMessage = _cryptoJs2.default.AES.encrypt(msgData.join(':'), this.state.memoKey).toString();
 
-      console.log('encryptedMessage: ', encryptedMessage);
-      var postingWif = _golosJs2.default.auth.toWif(this.props.student.username, this.props.student.pass, 'posting');
+      var postingWif = _golos2.default.auth.toWif(this.props.user.username, this.props.user.pass, 'posting');
 
-      var parentAuthor = this.props.user.username;
-      var author = this.props.student.username;
+      var parentAuthor = this.state.post.author;
+      var author = this.props.user.username;
       var parentPermlink = this.state.post.permlink;
       //golos.broadcast.comment(wif, parentAuthor, parentPermlink, author, permlink, title, body, jsonMetadata, function(err, result) {
-      _golosJs2.default.broadcast.comment(postingWif, parentAuthor, parentPermlink, author, this.state.post.permlink + '-answer-' + new Date().getTime(), '', encryptedMessage, {}, function (err, result) {
+      _golos2.default.broadcast.comment(postingWif, parentAuthor, parentPermlink, author, this.state.post.permlink + '-answer-' + new Date().getTime(), '', encryptedMessage, {}, function (err, result) {
         console.log(err, result);
         if (!err) {
           _this3.fetchPost();
@@ -3317,7 +3277,7 @@ var CoursesItemPage = (_dec = (0, _reactRedux.connect)(function (state) {
           } catch (e) {
             replies[ind].body = 'Invalid encrypted message';
           }
-          console.log(replies);
+          //console.log(replies)
           return Object.assign({}, prevState, {
             replies: replies
           });
@@ -3332,11 +3292,9 @@ var CoursesItemPage = (_dec = (0, _reactRedux.connect)(function (state) {
       return function () {
         var reply = _this5.state.replies[ind];
         console.log(reply.mark);
-        var postingWif = _golosJs2.default.auth.toWif(_this5.props.user.username, _this5.props.user.pass, 'posting');
-
+        var postingWif = _golos2.default.auth.toWif(_this5.props.user.username, _this5.props.user.pass, 'posting');
         //golos.broadcast.comment(wif, parentAuthor, parentPermlink, author, permlink, title, body, jsonMetadata, function(err, result) {
-
-        _golosJs2.default.broadcast.comment(postingWif, _this5.props.student.username, reply.permlink, _this5.props.user.username, reply.permlink + '-teacher-' + new Date().getTime(), '', '\u041E\u0446\u0435\u043D\u043A\u0430 ' + reply.mark, {}, function (err, result) {
+        _golos2.default.broadcast.comment(postingWif, reply.author, reply.permlink, _this5.props.user.username, reply.permlink + '-teacher-' + new Date().getTime(), '', '\u041E\u0446\u0435\u043D\u043A\u0430 ' + reply.mark, {}, function (err, result) {
           console.log(err, result);
           if (!err) {
             _this5.fetchPost();
@@ -3364,7 +3322,8 @@ var CoursesItemPage = (_dec = (0, _reactRedux.connect)(function (state) {
     value: function render() {
       var _this7 = this;
 
-      console.log('render: ', this.state);
+      console.log('Item page render: ', this.props);
+      console.log('Item page render: ', this.state);
       return _react2.default.createElement(
         _components.PageTemplate,
         {
@@ -3388,7 +3347,7 @@ var CoursesItemPage = (_dec = (0, _reactRedux.connect)(function (state) {
             )
           )
         ),
-        _react2.default.createElement(
+        this.props.user.role === 'student' && _react2.default.createElement(
           'div',
           {
             className: 'course-item__answer-form'
@@ -3439,9 +3398,6 @@ var CoursesItemPage = (_dec = (0, _reactRedux.connect)(function (state) {
                 key: r.id,
                 className: 'course-item-reply'
               },
-              _react2.default.createElement(_CardTitle2.default, {
-                title: r.title
-              }),
               _react2.default.createElement(
                 _CardText2.default,
                 null,
@@ -3455,7 +3411,7 @@ var CoursesItemPage = (_dec = (0, _reactRedux.connect)(function (state) {
                   null,
                   r.created
                 ),
-                _react2.default.createElement(
+                _this7.props.user.role === 'teacher' && _react2.default.createElement(
                   'div',
                   {
                     className: 'course-item-reply__btns'
@@ -3468,7 +3424,7 @@ var CoursesItemPage = (_dec = (0, _reactRedux.connect)(function (state) {
                     },
                     '\u0420\u0430\u0441\u0448\u0438\u0444\u0440\u043E\u0432\u0430\u0442\u044C'
                   ),
-                  _react2.default.createElement(
+                  !r.replies || r.replies.length === 0 && _react2.default.createElement(
                     'div',
                     null,
                     _react2.default.createElement(_components.OneSelectWidget, {
@@ -3512,25 +3468,23 @@ var CoursesItemPage = (_dec = (0, _reactRedux.connect)(function (state) {
   }]);
 
   return CoursesItemPage;
-}(_react.PureComponent), _class2.defaultProps = {
-  //courses: [],
-}, _temp)) || _class);
+}(_react.PureComponent), _class2.defaultProps = {}, _temp)) || _class);
 exports.default = CoursesItemPage;
-
-/***/ }),
-/* 92 */
-/***/ (function(module, exports) {
-
-module.exports = require("crypto-js");
 
 /***/ }),
 /* 93 */
 /***/ (function(module, exports) {
 
-throw new Error("Module build failed: Error: Cannot find module './assets.json'\n    at Function.Module._resolveFilename (module.js:536:15)\n    at Function.Module._load (module.js:466:25)\n    at Module.require (module.js:579:17)\n    at require (internal/module.js:11:18)\n    at Object.<anonymous> (/home/ivan/Projects/hackaton/client/node_modules/css-loader/index.js??ref--1-2!/home/ivan/Projects/hackaton/client/node_modules/postcss-loader/lib/index.js??postcss!/home/ivan/Projects/hackaton/client/node_modules/sass-loader/lib/loader.js!/home/ivan/Projects/hackaton/client/src/components/pages/courses/item/styles.scss:1:79)\n    at Module._compile (module.js:635:30)\n    at Object.exec (/home/ivan/Projects/hackaton/client/node_modules/webpack/lib/NormalModule.js:129:12)\n    at /home/ivan/Projects/hackaton/client/node_modules/extract-text-webpack-plugin/dist/loader.js:131:26\n    at compile (/home/ivan/Projects/hackaton/client/node_modules/webpack/lib/Compiler.js:300:11)\n    at applyPluginsAsync.err (/home/ivan/Projects/hackaton/client/node_modules/webpack/lib/Compiler.js:510:14)\n    at next (/home/ivan/Projects/hackaton/client/node_modules/tapable/lib/Tapable.js:202:11)\n    at Compiler.<anonymous> (/home/ivan/Projects/hackaton/client/node_modules/extract-text-webpack-plugin/dist/loader.js:112:7)\n    at next (/home/ivan/Projects/hackaton/client/node_modules/tapable/lib/Tapable.js:204:14)\n    at Compiler.<anonymous> (/home/ivan/Projects/hackaton/client/node_modules/webpack/lib/CachePlugin.js:78:5)\n    at Compiler.applyPluginsAsyncSeries (/home/ivan/Projects/hackaton/client/node_modules/tapable/lib/Tapable.js:206:13)\n    at compilation.seal.err (/home/ivan/Projects/hackaton/client/node_modules/webpack/lib/Compiler.js:507:11)\n    at Compilation.applyPluginsAsyncSeries (/home/ivan/Projects/hackaton/client/node_modules/tapable/lib/Tapable.js:195:46)\n    at self.applyPluginsAsync.err (/home/ivan/Projects/hackaton/client/node_modules/webpack/lib/Compilation.js:680:19)\n    at next (/home/ivan/Projects/hackaton/client/node_modules/tapable/lib/Tapable.js:202:11)\n    at LastCallWebpackPlugin.process (/home/ivan/Projects/hackaton/client/node_modules/last-call-webpack-plugin/index.js:126:12)\n    at Compilation.<anonymous> (/home/ivan/Projects/hackaton/client/node_modules/last-call-webpack-plugin/index.js:197:12)\n    at Compilation.applyPluginsAsyncSeries (/home/ivan/Projects/hackaton/client/node_modules/tapable/lib/Tapable.js:206:13)\n    at self.applyPluginsAsync.err (/home/ivan/Projects/hackaton/client/node_modules/webpack/lib/Compilation.js:671:11)\n    at next (/home/ivan/Projects/hackaton/client/node_modules/tapable/lib/Tapable.js:202:11)\n    at Compilation.compilation.plugin (/home/ivan/Projects/hackaton/client/node_modules/@webpack-blocks/webpack2/node_modules/webpack/lib/BannerPlugin.js:67:5)\n    at next (/home/ivan/Projects/hackaton/client/node_modules/tapable/lib/Tapable.js:204:14)\n    at LastCallWebpackPlugin.process (/home/ivan/Projects/hackaton/client/node_modules/last-call-webpack-plugin/index.js:126:12)\n    at Compilation.<anonymous> (/home/ivan/Projects/hackaton/client/node_modules/last-call-webpack-plugin/index.js:194:12)\n    at Compilation.applyPluginsAsyncSeries (/home/ivan/Projects/hackaton/client/node_modules/tapable/lib/Tapable.js:206:13)\n    at self.applyPluginsAsync.err (/home/ivan/Projects/hackaton/client/node_modules/webpack/lib/Compilation.js:666:10)");
+module.exports = require("crypto-js");
 
 /***/ }),
 /* 94 */
+/***/ (function(module, exports) {
+
+throw new Error("Module build failed: Error: Cannot find module './assets.json'\n    at Function.Module._resolveFilename (module.js:536:15)\n    at Function.Module._load (module.js:466:25)\n    at Module.require (module.js:579:17)\n    at require (internal/module.js:11:18)\n    at Object.<anonymous> (/home/ivan/Projects/hackaton/client/node_modules/css-loader/index.js??ref--1-2!/home/ivan/Projects/hackaton/client/node_modules/postcss-loader/lib/index.js??postcss!/home/ivan/Projects/hackaton/client/node_modules/sass-loader/lib/loader.js!/home/ivan/Projects/hackaton/client/src/components/pages/courses/item/styles.scss:1:79)\n    at Module._compile (module.js:635:30)\n    at Object.exec (/home/ivan/Projects/hackaton/client/node_modules/webpack/lib/NormalModule.js:129:12)\n    at /home/ivan/Projects/hackaton/client/node_modules/extract-text-webpack-plugin/dist/loader.js:131:26\n    at compile (/home/ivan/Projects/hackaton/client/node_modules/webpack/lib/Compiler.js:300:11)\n    at applyPluginsAsync.err (/home/ivan/Projects/hackaton/client/node_modules/webpack/lib/Compiler.js:510:14)\n    at next (/home/ivan/Projects/hackaton/client/node_modules/tapable/lib/Tapable.js:202:11)\n    at Compiler.<anonymous> (/home/ivan/Projects/hackaton/client/node_modules/extract-text-webpack-plugin/dist/loader.js:112:7)\n    at next (/home/ivan/Projects/hackaton/client/node_modules/tapable/lib/Tapable.js:204:14)\n    at Compiler.<anonymous> (/home/ivan/Projects/hackaton/client/node_modules/webpack/lib/CachePlugin.js:78:5)\n    at Compiler.applyPluginsAsyncSeries (/home/ivan/Projects/hackaton/client/node_modules/tapable/lib/Tapable.js:206:13)\n    at compilation.seal.err (/home/ivan/Projects/hackaton/client/node_modules/webpack/lib/Compiler.js:507:11)\n    at Compilation.applyPluginsAsyncSeries (/home/ivan/Projects/hackaton/client/node_modules/tapable/lib/Tapable.js:195:46)\n    at self.applyPluginsAsync.err (/home/ivan/Projects/hackaton/client/node_modules/webpack/lib/Compilation.js:680:19)\n    at next (/home/ivan/Projects/hackaton/client/node_modules/tapable/lib/Tapable.js:202:11)\n    at LastCallWebpackPlugin.process (/home/ivan/Projects/hackaton/client/node_modules/last-call-webpack-plugin/index.js:126:12)\n    at Compilation.<anonymous> (/home/ivan/Projects/hackaton/client/node_modules/last-call-webpack-plugin/index.js:197:12)\n    at Compilation.applyPluginsAsyncSeries (/home/ivan/Projects/hackaton/client/node_modules/tapable/lib/Tapable.js:206:13)\n    at self.applyPluginsAsync.err (/home/ivan/Projects/hackaton/client/node_modules/webpack/lib/Compilation.js:671:11)\n    at next (/home/ivan/Projects/hackaton/client/node_modules/tapable/lib/Tapable.js:202:11)\n    at Compilation.compilation.plugin (/home/ivan/Projects/hackaton/client/node_modules/@webpack-blocks/webpack2/node_modules/webpack/lib/BannerPlugin.js:67:5)\n    at next (/home/ivan/Projects/hackaton/client/node_modules/tapable/lib/Tapable.js:204:14)\n    at LastCallWebpackPlugin.process (/home/ivan/Projects/hackaton/client/node_modules/last-call-webpack-plugin/index.js:126:12)\n    at Compilation.<anonymous> (/home/ivan/Projects/hackaton/client/node_modules/last-call-webpack-plugin/index.js:194:12)\n    at Compilation.applyPluginsAsyncSeries (/home/ivan/Projects/hackaton/client/node_modules/tapable/lib/Tapable.js:206:13)\n    at self.applyPluginsAsync.err (/home/ivan/Projects/hackaton/client/node_modules/webpack/lib/Compilation.js:666:10)");
+
+/***/ }),
+/* 95 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3602,7 +3556,7 @@ var NotFound = function (_Component) {
 exports.default = NotFound;
 
 /***/ }),
-/* 95 */
+/* 96 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3624,31 +3578,9 @@ var _propTypes = __webpack_require__(1);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _Button = __webpack_require__(5);
-
-var _Button2 = _interopRequireDefault(_Button);
-
-var _Card = __webpack_require__(10);
-
-var _Card2 = _interopRequireDefault(_Card);
-
-var _CardTitle = __webpack_require__(11);
-
-var _CardTitle2 = _interopRequireDefault(_CardTitle);
-
-var _CardText = __webpack_require__(12);
-
-var _CardText2 = _interopRequireDefault(_CardText);
-
-var _CardActions = __webpack_require__(15);
-
-var _CardActions2 = _interopRequireDefault(_CardActions);
-
-var _reactRedux = __webpack_require__(4);
+var _reactRouter = __webpack_require__(14);
 
 var _config = __webpack_require__(2);
-
-var _components = __webpack_require__(3);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -3659,7 +3591,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 if (_config.isBrowser) {
-  __webpack_require__(96);
+  __webpack_require__(97);
 }
 
 var IndexPage = (_temp = _class = function (_PureComponent) {
@@ -3674,8 +3606,8 @@ var IndexPage = (_temp = _class = function (_PureComponent) {
   _createClass(IndexPage, [{
     key: 'render',
     value: function render() {
-      return _react2.default.createElement(_components.PageTemplate, {
-        title: '\u0413\u043B\u0430\u0432\u043D\u0430\u044F'
+      return _react2.default.createElement(_reactRouter.Redirect, {
+        to: '/courses'
       });
     }
   }]);
@@ -3685,13 +3617,13 @@ var IndexPage = (_temp = _class = function (_PureComponent) {
 exports.default = IndexPage;
 
 /***/ }),
-/* 96 */
+/* 97 */
 /***/ (function(module, exports) {
 
 throw new Error("Module build failed: Error: Cannot find module './assets.json'\n    at Function.Module._resolveFilename (module.js:536:15)\n    at Function.Module._load (module.js:466:25)\n    at Module.require (module.js:579:17)\n    at require (internal/module.js:11:18)\n    at Object.<anonymous> (/home/ivan/Projects/hackaton/client/node_modules/css-loader/index.js??ref--1-2!/home/ivan/Projects/hackaton/client/node_modules/postcss-loader/lib/index.js??postcss!/home/ivan/Projects/hackaton/client/node_modules/sass-loader/lib/loader.js!/home/ivan/Projects/hackaton/client/src/components/pages/IndexPage/styles.scss:1:79)\n    at Module._compile (module.js:635:30)\n    at Object.exec (/home/ivan/Projects/hackaton/client/node_modules/webpack/lib/NormalModule.js:129:12)\n    at /home/ivan/Projects/hackaton/client/node_modules/extract-text-webpack-plugin/dist/loader.js:131:26\n    at compile (/home/ivan/Projects/hackaton/client/node_modules/webpack/lib/Compiler.js:300:11)\n    at applyPluginsAsync.err (/home/ivan/Projects/hackaton/client/node_modules/webpack/lib/Compiler.js:510:14)\n    at next (/home/ivan/Projects/hackaton/client/node_modules/tapable/lib/Tapable.js:202:11)\n    at Compiler.<anonymous> (/home/ivan/Projects/hackaton/client/node_modules/extract-text-webpack-plugin/dist/loader.js:112:7)\n    at next (/home/ivan/Projects/hackaton/client/node_modules/tapable/lib/Tapable.js:204:14)\n    at Compiler.<anonymous> (/home/ivan/Projects/hackaton/client/node_modules/webpack/lib/CachePlugin.js:78:5)\n    at Compiler.applyPluginsAsyncSeries (/home/ivan/Projects/hackaton/client/node_modules/tapable/lib/Tapable.js:206:13)\n    at compilation.seal.err (/home/ivan/Projects/hackaton/client/node_modules/webpack/lib/Compiler.js:507:11)\n    at Compilation.applyPluginsAsyncSeries (/home/ivan/Projects/hackaton/client/node_modules/tapable/lib/Tapable.js:195:46)\n    at self.applyPluginsAsync.err (/home/ivan/Projects/hackaton/client/node_modules/webpack/lib/Compilation.js:680:19)\n    at next (/home/ivan/Projects/hackaton/client/node_modules/tapable/lib/Tapable.js:202:11)\n    at LastCallWebpackPlugin.process (/home/ivan/Projects/hackaton/client/node_modules/last-call-webpack-plugin/index.js:126:12)\n    at Compilation.<anonymous> (/home/ivan/Projects/hackaton/client/node_modules/last-call-webpack-plugin/index.js:197:12)\n    at Compilation.applyPluginsAsyncSeries (/home/ivan/Projects/hackaton/client/node_modules/tapable/lib/Tapable.js:206:13)\n    at self.applyPluginsAsync.err (/home/ivan/Projects/hackaton/client/node_modules/webpack/lib/Compilation.js:671:11)\n    at next (/home/ivan/Projects/hackaton/client/node_modules/tapable/lib/Tapable.js:202:11)\n    at Compilation.compilation.plugin (/home/ivan/Projects/hackaton/client/node_modules/@webpack-blocks/webpack2/node_modules/webpack/lib/BannerPlugin.js:67:5)\n    at next (/home/ivan/Projects/hackaton/client/node_modules/tapable/lib/Tapable.js:204:14)\n    at LastCallWebpackPlugin.process (/home/ivan/Projects/hackaton/client/node_modules/last-call-webpack-plugin/index.js:126:12)\n    at Compilation.<anonymous> (/home/ivan/Projects/hackaton/client/node_modules/last-call-webpack-plugin/index.js:194:12)\n    at Compilation.applyPluginsAsyncSeries (/home/ivan/Projects/hackaton/client/node_modules/tapable/lib/Tapable.js:206:13)\n    at self.applyPluginsAsync.err (/home/ivan/Projects/hackaton/client/node_modules/webpack/lib/Compilation.js:666:10)");
 
 /***/ }),
-/* 97 */
+/* 98 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3702,11 +3634,11 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.MinimalTemplate = exports.PageTemplate = undefined;
 
-var _PageTemplate2 = __webpack_require__(98);
+var _PageTemplate2 = __webpack_require__(99);
 
 var _PageTemplate3 = _interopRequireDefault(_PageTemplate2);
 
-var _MinimalTemplate2 = __webpack_require__(100);
+var _MinimalTemplate2 = __webpack_require__(101);
 
 var _MinimalTemplate3 = _interopRequireDefault(_MinimalTemplate2);
 
@@ -3716,7 +3648,7 @@ exports.PageTemplate = _PageTemplate3.default;
 exports.MinimalTemplate = _MinimalTemplate3.default;
 
 /***/ }),
-/* 98 */
+/* 99 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3740,19 +3672,19 @@ var _propTypes2 = _interopRequireDefault(_propTypes);
 
 var _reactRedux = __webpack_require__(4);
 
-var _reactHelmet = __webpack_require__(9);
+var _reactHelmet = __webpack_require__(10);
 
-var _Button = __webpack_require__(5);
+var _Button = __webpack_require__(7);
 
 var _Button2 = _interopRequireDefault(_Button);
 
-var _reactRouterDom = __webpack_require__(6);
+var _reactRouterDom = __webpack_require__(5);
 
 var _components = __webpack_require__(3);
 
-var _selectors = __webpack_require__(7);
+var _selectors = __webpack_require__(6);
 
-var _actions = __webpack_require__(14);
+var _actions = __webpack_require__(9);
 
 var _config = __webpack_require__(2);
 
@@ -3765,7 +3697,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 if (_config.isBrowser) {
-  __webpack_require__(99);
+  __webpack_require__(100);
 }
 
 //@connect(
@@ -3796,43 +3728,7 @@ var PageTemplate = (_temp = _class = function (_Component) {
         toolbar = this.props.toolbar;
       } else {
         toolbar = _react2.default.createElement(_components.Toolbar, {
-          title: this.props.title,
-          items: [_react2.default.createElement(
-            'div',
-            {
-              className: 'toolbar__right-btns'
-            },
-            _react2.default.createElement(
-              _reactRouterDom.Link,
-              {
-                to: '/courses'
-              },
-              _react2.default.createElement(
-                _Button2.default,
-                {
-                  flat: true,
-                  primary: true,
-                  type: 'submit'
-                },
-                '\u0412\u0441\u0435 \u043A\u0443\u0440\u0441\u044B'
-              )
-            ),
-            _react2.default.createElement(
-              _reactRouterDom.Link,
-              {
-                to: '/courses/add'
-              },
-              _react2.default.createElement(
-                _Button2.default,
-                {
-                  flat: true,
-                  primary: true,
-                  type: 'submit'
-                },
-                '\u041D\u043E\u0432\u044B\u0439 \u043A\u0443\u0440\u0441'
-              )
-            )
-          )]
+          title: this.props.title
         });
       }
       return _react2.default.createElement(
@@ -3884,13 +3780,13 @@ var PageTemplate = (_temp = _class = function (_Component) {
 exports.default = PageTemplate;
 
 /***/ }),
-/* 99 */
+/* 100 */
 /***/ (function(module, exports) {
 
 throw new Error("Module build failed: Error: Cannot find module './assets.json'\n    at Function.Module._resolveFilename (module.js:536:15)\n    at Function.Module._load (module.js:466:25)\n    at Module.require (module.js:579:17)\n    at require (internal/module.js:11:18)\n    at Object.<anonymous> (/home/ivan/Projects/hackaton/client/node_modules/css-loader/index.js??ref--1-2!/home/ivan/Projects/hackaton/client/node_modules/postcss-loader/lib/index.js??postcss!/home/ivan/Projects/hackaton/client/node_modules/sass-loader/lib/loader.js!/home/ivan/Projects/hackaton/client/src/components/templates/PageTemplate/styles.scss:1:79)\n    at Module._compile (module.js:635:30)\n    at Object.exec (/home/ivan/Projects/hackaton/client/node_modules/webpack/lib/NormalModule.js:129:12)\n    at /home/ivan/Projects/hackaton/client/node_modules/extract-text-webpack-plugin/dist/loader.js:131:26\n    at compile (/home/ivan/Projects/hackaton/client/node_modules/webpack/lib/Compiler.js:300:11)\n    at applyPluginsAsync.err (/home/ivan/Projects/hackaton/client/node_modules/webpack/lib/Compiler.js:510:14)\n    at next (/home/ivan/Projects/hackaton/client/node_modules/tapable/lib/Tapable.js:202:11)\n    at Compiler.<anonymous> (/home/ivan/Projects/hackaton/client/node_modules/extract-text-webpack-plugin/dist/loader.js:112:7)\n    at next (/home/ivan/Projects/hackaton/client/node_modules/tapable/lib/Tapable.js:204:14)\n    at Compiler.<anonymous> (/home/ivan/Projects/hackaton/client/node_modules/webpack/lib/CachePlugin.js:78:5)\n    at Compiler.applyPluginsAsyncSeries (/home/ivan/Projects/hackaton/client/node_modules/tapable/lib/Tapable.js:206:13)\n    at compilation.seal.err (/home/ivan/Projects/hackaton/client/node_modules/webpack/lib/Compiler.js:507:11)\n    at Compilation.applyPluginsAsyncSeries (/home/ivan/Projects/hackaton/client/node_modules/tapable/lib/Tapable.js:195:46)\n    at self.applyPluginsAsync.err (/home/ivan/Projects/hackaton/client/node_modules/webpack/lib/Compilation.js:680:19)\n    at next (/home/ivan/Projects/hackaton/client/node_modules/tapable/lib/Tapable.js:202:11)\n    at LastCallWebpackPlugin.process (/home/ivan/Projects/hackaton/client/node_modules/last-call-webpack-plugin/index.js:126:12)\n    at Compilation.<anonymous> (/home/ivan/Projects/hackaton/client/node_modules/last-call-webpack-plugin/index.js:197:12)\n    at Compilation.applyPluginsAsyncSeries (/home/ivan/Projects/hackaton/client/node_modules/tapable/lib/Tapable.js:206:13)\n    at self.applyPluginsAsync.err (/home/ivan/Projects/hackaton/client/node_modules/webpack/lib/Compilation.js:671:11)\n    at next (/home/ivan/Projects/hackaton/client/node_modules/tapable/lib/Tapable.js:202:11)\n    at Compilation.compilation.plugin (/home/ivan/Projects/hackaton/client/node_modules/@webpack-blocks/webpack2/node_modules/webpack/lib/BannerPlugin.js:67:5)\n    at next (/home/ivan/Projects/hackaton/client/node_modules/tapable/lib/Tapable.js:204:14)\n    at LastCallWebpackPlugin.process (/home/ivan/Projects/hackaton/client/node_modules/last-call-webpack-plugin/index.js:126:12)\n    at Compilation.<anonymous> (/home/ivan/Projects/hackaton/client/node_modules/last-call-webpack-plugin/index.js:194:12)\n    at Compilation.applyPluginsAsyncSeries (/home/ivan/Projects/hackaton/client/node_modules/tapable/lib/Tapable.js:206:13)\n    at self.applyPluginsAsync.err (/home/ivan/Projects/hackaton/client/node_modules/webpack/lib/Compilation.js:666:10)");
 
 /***/ }),
-/* 100 */
+/* 101 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3908,7 +3804,7 @@ var _propTypes = __webpack_require__(1);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _reactHelmet = __webpack_require__(9);
+var _reactHelmet = __webpack_require__(10);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -3943,7 +3839,7 @@ MinimalTemplate.defaultProps = {};
 exports.default = MinimalTemplate;
 
 /***/ }),
-/* 101 */
+/* 102 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3954,15 +3850,15 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.Notifications = exports.Toolbar = exports.Footer = undefined;
 
-var _Footer2 = __webpack_require__(102);
+var _Footer2 = __webpack_require__(103);
 
 var _Footer3 = _interopRequireDefault(_Footer2);
 
-var _Toolbar2 = __webpack_require__(104);
+var _Toolbar2 = __webpack_require__(105);
 
 var _Toolbar3 = _interopRequireDefault(_Toolbar2);
 
-var _Notifications2 = __webpack_require__(108);
+var _Notifications2 = __webpack_require__(109);
 
 var _Notifications3 = _interopRequireDefault(_Notifications2);
 
@@ -3973,7 +3869,7 @@ exports.Toolbar = _Toolbar3.default;
 exports.Notifications = _Notifications3.default;
 
 /***/ }),
-/* 102 */
+/* 103 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4008,7 +3904,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 if (_config.isBrowser) {
-  __webpack_require__(103);
+  __webpack_require__(104);
 }
 
 var Footer = (_temp = _class = function (_PureComponent) {
@@ -4047,13 +3943,13 @@ var Footer = (_temp = _class = function (_PureComponent) {
 exports.default = Footer;
 
 /***/ }),
-/* 103 */
+/* 104 */
 /***/ (function(module, exports) {
 
 throw new Error("Module build failed: Error: Cannot find module './assets.json'\n    at Function.Module._resolveFilename (module.js:536:15)\n    at Function.Module._load (module.js:466:25)\n    at Module.require (module.js:579:17)\n    at require (internal/module.js:11:18)\n    at Object.<anonymous> (/home/ivan/Projects/hackaton/client/node_modules/css-loader/index.js??ref--1-2!/home/ivan/Projects/hackaton/client/node_modules/postcss-loader/lib/index.js??postcss!/home/ivan/Projects/hackaton/client/node_modules/sass-loader/lib/loader.js!/home/ivan/Projects/hackaton/client/src/components/layouts/Footer/styles.scss:1:79)\n    at Module._compile (module.js:635:30)\n    at Object.exec (/home/ivan/Projects/hackaton/client/node_modules/webpack/lib/NormalModule.js:129:12)\n    at /home/ivan/Projects/hackaton/client/node_modules/extract-text-webpack-plugin/dist/loader.js:131:26\n    at compile (/home/ivan/Projects/hackaton/client/node_modules/webpack/lib/Compiler.js:300:11)\n    at applyPluginsAsync.err (/home/ivan/Projects/hackaton/client/node_modules/webpack/lib/Compiler.js:510:14)\n    at next (/home/ivan/Projects/hackaton/client/node_modules/tapable/lib/Tapable.js:202:11)\n    at Compiler.<anonymous> (/home/ivan/Projects/hackaton/client/node_modules/extract-text-webpack-plugin/dist/loader.js:112:7)\n    at next (/home/ivan/Projects/hackaton/client/node_modules/tapable/lib/Tapable.js:204:14)\n    at Compiler.<anonymous> (/home/ivan/Projects/hackaton/client/node_modules/webpack/lib/CachePlugin.js:78:5)\n    at Compiler.applyPluginsAsyncSeries (/home/ivan/Projects/hackaton/client/node_modules/tapable/lib/Tapable.js:206:13)\n    at compilation.seal.err (/home/ivan/Projects/hackaton/client/node_modules/webpack/lib/Compiler.js:507:11)\n    at Compilation.applyPluginsAsyncSeries (/home/ivan/Projects/hackaton/client/node_modules/tapable/lib/Tapable.js:195:46)\n    at self.applyPluginsAsync.err (/home/ivan/Projects/hackaton/client/node_modules/webpack/lib/Compilation.js:680:19)\n    at next (/home/ivan/Projects/hackaton/client/node_modules/tapable/lib/Tapable.js:202:11)\n    at LastCallWebpackPlugin.process (/home/ivan/Projects/hackaton/client/node_modules/last-call-webpack-plugin/index.js:126:12)\n    at Compilation.<anonymous> (/home/ivan/Projects/hackaton/client/node_modules/last-call-webpack-plugin/index.js:197:12)\n    at Compilation.applyPluginsAsyncSeries (/home/ivan/Projects/hackaton/client/node_modules/tapable/lib/Tapable.js:206:13)\n    at self.applyPluginsAsync.err (/home/ivan/Projects/hackaton/client/node_modules/webpack/lib/Compilation.js:671:11)\n    at next (/home/ivan/Projects/hackaton/client/node_modules/tapable/lib/Tapable.js:202:11)\n    at Compilation.compilation.plugin (/home/ivan/Projects/hackaton/client/node_modules/@webpack-blocks/webpack2/node_modules/webpack/lib/BannerPlugin.js:67:5)\n    at next (/home/ivan/Projects/hackaton/client/node_modules/tapable/lib/Tapable.js:204:14)\n    at LastCallWebpackPlugin.process (/home/ivan/Projects/hackaton/client/node_modules/last-call-webpack-plugin/index.js:126:12)\n    at Compilation.<anonymous> (/home/ivan/Projects/hackaton/client/node_modules/last-call-webpack-plugin/index.js:194:12)\n    at Compilation.applyPluginsAsyncSeries (/home/ivan/Projects/hackaton/client/node_modules/tapable/lib/Tapable.js:206:13)\n    at self.applyPluginsAsync.err (/home/ivan/Projects/hackaton/client/node_modules/webpack/lib/Compilation.js:666:10)");
 
 /***/ }),
-/* 104 */
+/* 105 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4065,7 +3961,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _class, _temp;
+var _dec, _class, _class2, _temp;
 
 var _react = __webpack_require__(0);
 
@@ -4075,13 +3971,27 @@ var _propTypes = __webpack_require__(1);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _LinearProgress = __webpack_require__(105);
+var _LinearProgress = __webpack_require__(106);
 
 var _LinearProgress2 = _interopRequireDefault(_LinearProgress);
 
-var _Toolbars = __webpack_require__(106);
+var _Toolbars = __webpack_require__(107);
 
 var _Toolbars2 = _interopRequireDefault(_Toolbars);
+
+var _Button = __webpack_require__(7);
+
+var _Button2 = _interopRequireDefault(_Button);
+
+var _reactRouterDom = __webpack_require__(5);
+
+var _reactRedux = __webpack_require__(4);
+
+var _components = __webpack_require__(3);
+
+var _selectors = __webpack_require__(6);
+
+var _actions = __webpack_require__(9);
 
 var _config = __webpack_require__(2);
 
@@ -4094,34 +4004,105 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 if (_config.isBrowser) {
-  __webpack_require__(107);
+  __webpack_require__(108);
 }
 
-var Toolbar = (_temp = _class = function (_PureComponent) {
+var Toolbar = (_dec = (0, _reactRedux.connect)(function (state) {
+  return {
+    currentUser: (0, _selectors.selectCurrentUser)(state),
+    selectUserByUserName: function selectUserByUserName(userName) {
+      return (0, _selectors.selectUserByUserName)(state, userName);
+    },
+    allUsers: (0, _selectors.selectUsers)(state)
+  };
+}, function (dispatch) {
+  return {
+    setCurrentUser: function setCurrentUser(user) {
+      return dispatch((0, _actions.setCurrentUser)(user));
+    }
+  };
+}), _dec(_class = (_temp = _class2 = function (_PureComponent) {
   _inherits(Toolbar, _PureComponent);
 
-  function Toolbar() {
+  function Toolbar(props) {
     _classCallCheck(this, Toolbar);
 
-    return _possibleConstructorReturn(this, (Toolbar.__proto__ || Object.getPrototypeOf(Toolbar)).apply(this, arguments));
+    var _this = _possibleConstructorReturn(this, (Toolbar.__proto__ || Object.getPrototypeOf(Toolbar)).call(this, props));
+
+    _this.onUserRoleChange = _this.onUserRoleChange.bind(_this);
+    return _this;
   }
 
   _createClass(Toolbar, [{
+    key: 'onUserRoleChange',
+    value: function onUserRoleChange(userName) {
+      var user = this.props.selectUserByUserName(userName);
+      console.log(user);
+      if (user) {
+        this.props.setCurrentUser(user);
+      }
+    }
+  }, {
     key: 'render',
     value: function render() {
-      //console.log('Toolbar: ', this.props)
+      console.log('Toolbar: ', this.props.currentUser);
       var results = [_react2.default.createElement(
         _Toolbars2.default,
         {
           key: 'toolbar',
-          fixed: true,
-          zDepth: 1,
+          fixed: true
+          //colored
+          , zDepth: 1,
           className: 'toolbar ',
           title: this.props.title
         },
-        this.props.items.map(function (i) {
-          return i;
-        })
+        _react2.default.createElement(
+          'div',
+          {
+            className: 'toolbar__right-btns'
+          },
+          _react2.default.createElement(
+            _reactRouterDom.Link,
+            {
+              to: '/courses'
+            },
+            _react2.default.createElement(
+              _Button2.default,
+              {
+                flat: true,
+                primary: true,
+                type: 'submit'
+              },
+              '\u0412\u0441\u0435 \u043A\u0443\u0440\u0441\u044B'
+            )
+          ),
+          this.props.currentUser.role === 'teacher' && _react2.default.createElement(
+            _reactRouterDom.Link,
+            {
+              to: '/courses/add'
+            },
+            _react2.default.createElement(
+              _Button2.default,
+              {
+                flat: true,
+                primary: true,
+                type: 'submit'
+              },
+              '\u041D\u043E\u0432\u044B\u0439 \u043A\u0443\u0440\u0441'
+            )
+          ),
+          _react2.default.createElement(_components.OneSelectWidget, {
+            className: 'toolbar__user',
+            value: this.props.currentUser.username,
+            onChange: this.onUserRoleChange,
+            options: {
+              _fullWidth: false,
+              enumOptions: this.props.allUsers.map(function (u) {
+                return { value: u.username, label: u.role };
+              })
+            }
+          })
+        )
       )];
       if (this.props.loading) {
         results.push(_react2.default.createElement(_LinearProgress2.default, {
@@ -4135,33 +4116,33 @@ var Toolbar = (_temp = _class = function (_PureComponent) {
   }]);
 
   return Toolbar;
-}(_react.PureComponent), _class.defaultProps = {
+}(_react.PureComponent), _class2.defaultProps = {
   className: '',
   items: [],
   loading: false
-}, _temp);
+}, _temp)) || _class);
 exports.default = Toolbar;
-
-/***/ }),
-/* 105 */
-/***/ (function(module, exports) {
-
-module.exports = require("react-md/lib/Progress/LinearProgress");
 
 /***/ }),
 /* 106 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-md/lib/Toolbars");
+module.exports = require("react-md/lib/Progress/LinearProgress");
 
 /***/ }),
 /* 107 */
 /***/ (function(module, exports) {
 
-throw new Error("Module build failed: Error: Cannot find module './assets.json'\n    at Function.Module._resolveFilename (module.js:536:15)\n    at Function.Module._load (module.js:466:25)\n    at Module.require (module.js:579:17)\n    at require (internal/module.js:11:18)\n    at Object.<anonymous> (/home/ivan/Projects/hackaton/client/node_modules/css-loader/index.js??ref--1-2!/home/ivan/Projects/hackaton/client/node_modules/postcss-loader/lib/index.js??postcss!/home/ivan/Projects/hackaton/client/node_modules/sass-loader/lib/loader.js!/home/ivan/Projects/hackaton/client/src/components/layouts/Toolbar/styles.scss:1:79)\n    at Module._compile (module.js:635:30)\n    at Object.exec (/home/ivan/Projects/hackaton/client/node_modules/webpack/lib/NormalModule.js:129:12)\n    at /home/ivan/Projects/hackaton/client/node_modules/extract-text-webpack-plugin/dist/loader.js:131:26\n    at compile (/home/ivan/Projects/hackaton/client/node_modules/webpack/lib/Compiler.js:300:11)\n    at applyPluginsAsync.err (/home/ivan/Projects/hackaton/client/node_modules/webpack/lib/Compiler.js:510:14)\n    at next (/home/ivan/Projects/hackaton/client/node_modules/tapable/lib/Tapable.js:202:11)\n    at Compiler.<anonymous> (/home/ivan/Projects/hackaton/client/node_modules/extract-text-webpack-plugin/dist/loader.js:112:7)\n    at next (/home/ivan/Projects/hackaton/client/node_modules/tapable/lib/Tapable.js:204:14)\n    at Compiler.<anonymous> (/home/ivan/Projects/hackaton/client/node_modules/webpack/lib/CachePlugin.js:78:5)\n    at Compiler.applyPluginsAsyncSeries (/home/ivan/Projects/hackaton/client/node_modules/tapable/lib/Tapable.js:206:13)\n    at compilation.seal.err (/home/ivan/Projects/hackaton/client/node_modules/webpack/lib/Compiler.js:507:11)\n    at Compilation.applyPluginsAsyncSeries (/home/ivan/Projects/hackaton/client/node_modules/tapable/lib/Tapable.js:195:46)\n    at self.applyPluginsAsync.err (/home/ivan/Projects/hackaton/client/node_modules/webpack/lib/Compilation.js:680:19)\n    at next (/home/ivan/Projects/hackaton/client/node_modules/tapable/lib/Tapable.js:202:11)\n    at LastCallWebpackPlugin.process (/home/ivan/Projects/hackaton/client/node_modules/last-call-webpack-plugin/index.js:126:12)\n    at Compilation.<anonymous> (/home/ivan/Projects/hackaton/client/node_modules/last-call-webpack-plugin/index.js:197:12)\n    at Compilation.applyPluginsAsyncSeries (/home/ivan/Projects/hackaton/client/node_modules/tapable/lib/Tapable.js:206:13)\n    at self.applyPluginsAsync.err (/home/ivan/Projects/hackaton/client/node_modules/webpack/lib/Compilation.js:671:11)\n    at next (/home/ivan/Projects/hackaton/client/node_modules/tapable/lib/Tapable.js:202:11)\n    at Compilation.compilation.plugin (/home/ivan/Projects/hackaton/client/node_modules/@webpack-blocks/webpack2/node_modules/webpack/lib/BannerPlugin.js:67:5)\n    at next (/home/ivan/Projects/hackaton/client/node_modules/tapable/lib/Tapable.js:204:14)\n    at LastCallWebpackPlugin.process (/home/ivan/Projects/hackaton/client/node_modules/last-call-webpack-plugin/index.js:126:12)\n    at Compilation.<anonymous> (/home/ivan/Projects/hackaton/client/node_modules/last-call-webpack-plugin/index.js:194:12)\n    at Compilation.applyPluginsAsyncSeries (/home/ivan/Projects/hackaton/client/node_modules/tapable/lib/Tapable.js:206:13)\n    at self.applyPluginsAsync.err (/home/ivan/Projects/hackaton/client/node_modules/webpack/lib/Compilation.js:666:10)");
+module.exports = require("react-md/lib/Toolbars");
 
 /***/ }),
 /* 108 */
+/***/ (function(module, exports) {
+
+throw new Error("Module build failed: Error: Cannot find module './assets.json'\n    at Function.Module._resolveFilename (module.js:536:15)\n    at Function.Module._load (module.js:466:25)\n    at Module.require (module.js:579:17)\n    at require (internal/module.js:11:18)\n    at Object.<anonymous> (/home/ivan/Projects/hackaton/client/node_modules/css-loader/index.js??ref--1-2!/home/ivan/Projects/hackaton/client/node_modules/postcss-loader/lib/index.js??postcss!/home/ivan/Projects/hackaton/client/node_modules/sass-loader/lib/loader.js!/home/ivan/Projects/hackaton/client/src/components/layouts/Toolbar/styles.scss:1:79)\n    at Module._compile (module.js:635:30)\n    at Object.exec (/home/ivan/Projects/hackaton/client/node_modules/webpack/lib/NormalModule.js:129:12)\n    at /home/ivan/Projects/hackaton/client/node_modules/extract-text-webpack-plugin/dist/loader.js:131:26\n    at compile (/home/ivan/Projects/hackaton/client/node_modules/webpack/lib/Compiler.js:300:11)\n    at applyPluginsAsync.err (/home/ivan/Projects/hackaton/client/node_modules/webpack/lib/Compiler.js:510:14)\n    at next (/home/ivan/Projects/hackaton/client/node_modules/tapable/lib/Tapable.js:202:11)\n    at Compiler.<anonymous> (/home/ivan/Projects/hackaton/client/node_modules/extract-text-webpack-plugin/dist/loader.js:112:7)\n    at next (/home/ivan/Projects/hackaton/client/node_modules/tapable/lib/Tapable.js:204:14)\n    at Compiler.<anonymous> (/home/ivan/Projects/hackaton/client/node_modules/webpack/lib/CachePlugin.js:78:5)\n    at Compiler.applyPluginsAsyncSeries (/home/ivan/Projects/hackaton/client/node_modules/tapable/lib/Tapable.js:206:13)\n    at compilation.seal.err (/home/ivan/Projects/hackaton/client/node_modules/webpack/lib/Compiler.js:507:11)\n    at Compilation.applyPluginsAsyncSeries (/home/ivan/Projects/hackaton/client/node_modules/tapable/lib/Tapable.js:195:46)\n    at self.applyPluginsAsync.err (/home/ivan/Projects/hackaton/client/node_modules/webpack/lib/Compilation.js:680:19)\n    at next (/home/ivan/Projects/hackaton/client/node_modules/tapable/lib/Tapable.js:202:11)\n    at LastCallWebpackPlugin.process (/home/ivan/Projects/hackaton/client/node_modules/last-call-webpack-plugin/index.js:126:12)\n    at Compilation.<anonymous> (/home/ivan/Projects/hackaton/client/node_modules/last-call-webpack-plugin/index.js:197:12)\n    at Compilation.applyPluginsAsyncSeries (/home/ivan/Projects/hackaton/client/node_modules/tapable/lib/Tapable.js:206:13)\n    at self.applyPluginsAsync.err (/home/ivan/Projects/hackaton/client/node_modules/webpack/lib/Compilation.js:671:11)\n    at next (/home/ivan/Projects/hackaton/client/node_modules/tapable/lib/Tapable.js:202:11)\n    at Compilation.compilation.plugin (/home/ivan/Projects/hackaton/client/node_modules/@webpack-blocks/webpack2/node_modules/webpack/lib/BannerPlugin.js:67:5)\n    at next (/home/ivan/Projects/hackaton/client/node_modules/tapable/lib/Tapable.js:204:14)\n    at LastCallWebpackPlugin.process (/home/ivan/Projects/hackaton/client/node_modules/last-call-webpack-plugin/index.js:126:12)\n    at Compilation.<anonymous> (/home/ivan/Projects/hackaton/client/node_modules/last-call-webpack-plugin/index.js:194:12)\n    at Compilation.applyPluginsAsyncSeries (/home/ivan/Projects/hackaton/client/node_modules/tapable/lib/Tapable.js:206:13)\n    at self.applyPluginsAsync.err (/home/ivan/Projects/hackaton/client/node_modules/webpack/lib/Compilation.js:666:10)");
+
+/***/ }),
+/* 109 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4185,13 +4166,13 @@ var _propTypes2 = _interopRequireDefault(_propTypes);
 
 var _reactRedux = __webpack_require__(4);
 
-var _Snackbars = __webpack_require__(109);
+var _Snackbars = __webpack_require__(110);
 
 var _Snackbars2 = _interopRequireDefault(_Snackbars);
 
-var _actions = __webpack_require__(14);
+var _actions = __webpack_require__(9);
 
-var _selectors = __webpack_require__(7);
+var _selectors = __webpack_require__(6);
 
 var _config = __webpack_require__(2);
 
@@ -4204,7 +4185,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 if (_config.isBrowser) {
-  __webpack_require__(110);
+  __webpack_require__(111);
 }
 
 var Notifications = (_dec = (0, _reactRedux.connect)(function (state) {
@@ -4255,25 +4236,25 @@ var Notifications = (_dec = (0, _reactRedux.connect)(function (state) {
 exports.default = Notifications;
 
 /***/ }),
-/* 109 */
+/* 110 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-md/lib/Snackbars");
 
 /***/ }),
-/* 110 */
+/* 111 */
 /***/ (function(module, exports) {
 
 throw new Error("Module build failed: Error: Cannot find module './assets.json'\n    at Function.Module._resolveFilename (module.js:536:15)\n    at Function.Module._load (module.js:466:25)\n    at Module.require (module.js:579:17)\n    at require (internal/module.js:11:18)\n    at Object.<anonymous> (/home/ivan/Projects/hackaton/client/node_modules/css-loader/index.js??ref--1-2!/home/ivan/Projects/hackaton/client/node_modules/postcss-loader/lib/index.js??postcss!/home/ivan/Projects/hackaton/client/node_modules/sass-loader/lib/loader.js!/home/ivan/Projects/hackaton/client/src/components/layouts/Notifications/styles.scss:1:79)\n    at Module._compile (module.js:635:30)\n    at Object.exec (/home/ivan/Projects/hackaton/client/node_modules/webpack/lib/NormalModule.js:129:12)\n    at /home/ivan/Projects/hackaton/client/node_modules/extract-text-webpack-plugin/dist/loader.js:131:26\n    at compile (/home/ivan/Projects/hackaton/client/node_modules/webpack/lib/Compiler.js:300:11)\n    at applyPluginsAsync.err (/home/ivan/Projects/hackaton/client/node_modules/webpack/lib/Compiler.js:510:14)\n    at next (/home/ivan/Projects/hackaton/client/node_modules/tapable/lib/Tapable.js:202:11)\n    at Compiler.<anonymous> (/home/ivan/Projects/hackaton/client/node_modules/extract-text-webpack-plugin/dist/loader.js:112:7)\n    at next (/home/ivan/Projects/hackaton/client/node_modules/tapable/lib/Tapable.js:204:14)\n    at Compiler.<anonymous> (/home/ivan/Projects/hackaton/client/node_modules/webpack/lib/CachePlugin.js:78:5)\n    at Compiler.applyPluginsAsyncSeries (/home/ivan/Projects/hackaton/client/node_modules/tapable/lib/Tapable.js:206:13)\n    at compilation.seal.err (/home/ivan/Projects/hackaton/client/node_modules/webpack/lib/Compiler.js:507:11)\n    at Compilation.applyPluginsAsyncSeries (/home/ivan/Projects/hackaton/client/node_modules/tapable/lib/Tapable.js:195:46)\n    at self.applyPluginsAsync.err (/home/ivan/Projects/hackaton/client/node_modules/webpack/lib/Compilation.js:680:19)\n    at next (/home/ivan/Projects/hackaton/client/node_modules/tapable/lib/Tapable.js:202:11)\n    at LastCallWebpackPlugin.process (/home/ivan/Projects/hackaton/client/node_modules/last-call-webpack-plugin/index.js:126:12)\n    at Compilation.<anonymous> (/home/ivan/Projects/hackaton/client/node_modules/last-call-webpack-plugin/index.js:197:12)\n    at Compilation.applyPluginsAsyncSeries (/home/ivan/Projects/hackaton/client/node_modules/tapable/lib/Tapable.js:206:13)\n    at self.applyPluginsAsync.err (/home/ivan/Projects/hackaton/client/node_modules/webpack/lib/Compilation.js:671:11)\n    at next (/home/ivan/Projects/hackaton/client/node_modules/tapable/lib/Tapable.js:202:11)\n    at Compilation.compilation.plugin (/home/ivan/Projects/hackaton/client/node_modules/@webpack-blocks/webpack2/node_modules/webpack/lib/BannerPlugin.js:67:5)\n    at next (/home/ivan/Projects/hackaton/client/node_modules/tapable/lib/Tapable.js:204:14)\n    at LastCallWebpackPlugin.process (/home/ivan/Projects/hackaton/client/node_modules/last-call-webpack-plugin/index.js:126:12)\n    at Compilation.<anonymous> (/home/ivan/Projects/hackaton/client/node_modules/last-call-webpack-plugin/index.js:194:12)\n    at Compilation.applyPluginsAsyncSeries (/home/ivan/Projects/hackaton/client/node_modules/tapable/lib/Tapable.js:206:13)\n    at self.applyPluginsAsync.err (/home/ivan/Projects/hackaton/client/node_modules/webpack/lib/Compilation.js:666:10)");
 
 /***/ }),
-/* 111 */
+/* 112 */
 /***/ (function(module, exports) {
 
 throw new Error("Module build failed: Error: Cannot find module './assets.json'\n    at Function.Module._resolveFilename (module.js:536:15)\n    at Function.Module._load (module.js:466:25)\n    at Module.require (module.js:579:17)\n    at require (internal/module.js:11:18)\n    at Object.<anonymous> (/home/ivan/Projects/hackaton/client/node_modules/css-loader/index.js??ref--1-2!/home/ivan/Projects/hackaton/client/node_modules/postcss-loader/lib/index.js??postcss!/home/ivan/Projects/hackaton/client/node_modules/sass-loader/lib/loader.js!/home/ivan/Projects/hackaton/client/src/components/styles.scss:1:79)\n    at Module._compile (module.js:635:30)\n    at Object.exec (/home/ivan/Projects/hackaton/client/node_modules/webpack/lib/NormalModule.js:129:12)\n    at /home/ivan/Projects/hackaton/client/node_modules/extract-text-webpack-plugin/dist/loader.js:131:26\n    at compile (/home/ivan/Projects/hackaton/client/node_modules/webpack/lib/Compiler.js:300:11)\n    at applyPluginsAsync.err (/home/ivan/Projects/hackaton/client/node_modules/webpack/lib/Compiler.js:510:14)\n    at next (/home/ivan/Projects/hackaton/client/node_modules/tapable/lib/Tapable.js:202:11)\n    at Compiler.<anonymous> (/home/ivan/Projects/hackaton/client/node_modules/extract-text-webpack-plugin/dist/loader.js:112:7)\n    at next (/home/ivan/Projects/hackaton/client/node_modules/tapable/lib/Tapable.js:204:14)\n    at Compiler.<anonymous> (/home/ivan/Projects/hackaton/client/node_modules/webpack/lib/CachePlugin.js:78:5)\n    at Compiler.applyPluginsAsyncSeries (/home/ivan/Projects/hackaton/client/node_modules/tapable/lib/Tapable.js:206:13)\n    at compilation.seal.err (/home/ivan/Projects/hackaton/client/node_modules/webpack/lib/Compiler.js:507:11)\n    at Compilation.applyPluginsAsyncSeries (/home/ivan/Projects/hackaton/client/node_modules/tapable/lib/Tapable.js:195:46)\n    at self.applyPluginsAsync.err (/home/ivan/Projects/hackaton/client/node_modules/webpack/lib/Compilation.js:680:19)\n    at next (/home/ivan/Projects/hackaton/client/node_modules/tapable/lib/Tapable.js:202:11)\n    at LastCallWebpackPlugin.process (/home/ivan/Projects/hackaton/client/node_modules/last-call-webpack-plugin/index.js:126:12)\n    at Compilation.<anonymous> (/home/ivan/Projects/hackaton/client/node_modules/last-call-webpack-plugin/index.js:197:12)\n    at Compilation.applyPluginsAsyncSeries (/home/ivan/Projects/hackaton/client/node_modules/tapable/lib/Tapable.js:206:13)\n    at self.applyPluginsAsync.err (/home/ivan/Projects/hackaton/client/node_modules/webpack/lib/Compilation.js:671:11)\n    at next (/home/ivan/Projects/hackaton/client/node_modules/tapable/lib/Tapable.js:202:11)\n    at Compilation.compilation.plugin (/home/ivan/Projects/hackaton/client/node_modules/@webpack-blocks/webpack2/node_modules/webpack/lib/BannerPlugin.js:67:5)\n    at next (/home/ivan/Projects/hackaton/client/node_modules/tapable/lib/Tapable.js:204:14)\n    at LastCallWebpackPlugin.process (/home/ivan/Projects/hackaton/client/node_modules/last-call-webpack-plugin/index.js:126:12)\n    at Compilation.<anonymous> (/home/ivan/Projects/hackaton/client/node_modules/last-call-webpack-plugin/index.js:194:12)\n    at Compilation.applyPluginsAsyncSeries (/home/ivan/Projects/hackaton/client/node_modules/tapable/lib/Tapable.js:206:13)\n    at self.applyPluginsAsync.err (/home/ivan/Projects/hackaton/client/node_modules/webpack/lib/Compilation.js:666:10)");
 
 /***/ }),
-/* 112 */
+/* 113 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4294,7 +4275,7 @@ var _propTypes = __webpack_require__(1);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _reactHelmet = __webpack_require__(9);
+var _reactHelmet = __webpack_require__(10);
 
 var _reactHelmet2 = _interopRequireDefault(_reactHelmet);
 

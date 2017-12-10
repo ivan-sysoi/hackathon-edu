@@ -5,7 +5,9 @@ $toolbar-sep-width: 20px;
 $toolbar-logo-width: 64px;
 
 $toolbar-rl-sep: 20px;
-
+.toolbar {
+  background: #fff !important;
+}
 .md-title--toolbar {
   flex: 1;
 }
@@ -19,5 +21,10 @@ $toolbar-rl-sep: 20px;
       margin-right: 0;
     }
   }
-  margin-right: 26px;
+  margin-right: 62px;
+}
+
+.toolbar__user {
+  padding: 10px 0;
+  width: 50px;
 }

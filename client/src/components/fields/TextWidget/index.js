@@ -1,38 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import TextField, { TextFieldTypes } from 'react-md/lib/TextFields/TextField'
-import isString from 'lodash/isString'
+import TextField  from 'react-md/lib/TextFields/TextField'
 import isInteger from 'lodash/isInteger'
 
 const TextWidget = (props) => {
-  //const options = {
-  //  type: 'text',
-  //}
   const type = props.options.type || props.schema.type === 'number' ? 'number' : 'text'
-  //if (props.schema.type === 'number') {
-  //  type = 'number'
-    //if (isInteger(props.schema.minimum)) {
-    //  options.min = props.schema.minimum
-    //}
-    //if (isInteger(props.schema.maximum)) {
-    //  options.max = props.schema.maximum
-    //}
-    //if (isInteger(props.schema.multipleOf)) {
-    //  options.step = props.schema.multipleOf
-    //}
-  //}
 
-  //if (props.options.rows) {
-  //  options.rows = props.options.rows
-  //  options.maxRows = 10
-  //}
-  //if (props.options.maxRows) {
-  //  options.maxRows = props.options.maxRows
-  //}
-  //if (isString(props.options.type)) {
-  //  options.type = props.options.type
-  //}
-  console.log(props)
   return (
     <TextField
       id={props.id}
